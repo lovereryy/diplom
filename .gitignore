@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Django
+*.log
+*.pot
+*.pyc
+media/
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# IDE
+.idea/
+.vscode/
+
+# Compiled Python bytecode
+*.pyc
+
+# Compiled C extensions
+*.so
+
+# Django testing
+htmlcov/
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Virtual environment
+venv/
+env/
+.env/
+
+.env
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
