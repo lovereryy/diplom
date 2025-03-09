@@ -1,0 +1,296 @@
+/* ~~~~Шрифты~~~~ */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/static/main/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-black';
+    src: url('/static/main/fonts/montserrat/Montserrat-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-light';
+    src: url('/static/main/fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Docker';
+    src: url('/static/main/fonts/Docker.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ~~~~Шрифты~~~~ */
+
+/* ~~~~Сброс стилей~~~~ */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:hover  {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+/* ~~~~Сброс стилей~~~~ */
+
+
+/* ~~~~Основные стили~~~~ */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fbfaf8;
+    color: #47200f;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    min-height: 100vh;
+}
+
+.navbar {
+    position: sticky;
+    top: 2rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #f4e9e6;
+    padding: 16px;
+    border-radius: 16px;
+    z-index: 1000;
+
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-family: 'Docker', sans-serif;
+    font-size: 28px;
+    color: #733f27 !important;
+}
+
+.logo:hover {
+    color: #5d321f !important;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    white-space: nowrap;
+}
+
+.btn.primary {
+    background-color: #9a6651;
+    color: #f4e9e6 !important;
+}
+
+.btn.primary:hover {
+    background-color: #8f5d49;
+}
+
+.btn.light:hover {
+    background-color: #eaddda;
+}
+
+.section {
+    padding: 16px;
+}
+
+/* ~~~~Основные стили~~~~ */
+
+
+/* ~~~~Адаптивность~~~~ */
+
+.hamburger {
+    display: none !important;
+    position: relative;
+    z-index: 1100;
+}
+.nav-links-mobile {
+    display: none;
+}
+
+
+.nav-links-mobile.active{
+    opacity: 1;
+}
+
+.nav-links-mobile.active > * {
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .nav-links-mobile.active{
+        display: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .container {
+        padding: 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 1rem;
+    }
+    
+    .logo-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hamburger {
+        display: inline-block !important;
+    }
+    .nav-links {
+        display: none;
+    }
+    .auth-btn {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
+
+/* ~~~~Адаптивность~~~~ */
+
