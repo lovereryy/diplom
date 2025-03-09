@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<h1>{{ product.name }}</h1>
+<p>{{ product.description }}</p>
+<p>Цена: {{ product.price }} руб.</p>
+
+<h2>Отзывы</h2>
+{% for review in reviews %}
+    <p>{{ review.user.username }} - Оценка: {{ review.score }}</p>
+    {% if review.text %}
+        <p>{{ review.text }}</p>
+    {% endif %}
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <h2>Оставить отзыв</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% else %}
+    <p><a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.</p>
+{% endif %}
+{% endblock %}
