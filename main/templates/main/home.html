@@ -5,7 +5,11 @@
 <div class="info-block center" id="home_first_block">
     Лучшие завтраки в городе!
 </div>
-<!-- <h1>Категории</h1>
+
+<div class="block-header">
+
+</div>
+<h1>Категории</h1>
 <ul>
     {% for category in categories %}
         <li>{{ category.name }}</li>
@@ -19,5 +23,5 @@
             <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - {{ product.price }} руб.
         </li>
     {% endfor %}
-</ul> -->
+</ul>
 {% endblock %}

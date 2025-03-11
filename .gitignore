@@ -36,7 +36,7 @@ venv/
 env/
 .env/
 
-.env
+# .env
 
 # macOS
 .DS_Store
