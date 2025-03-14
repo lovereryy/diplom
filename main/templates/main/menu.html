@@ -25,15 +25,11 @@
 <div class="block-header">
     Меню
 </div>
-<div class="category-list">
+<ul>
     {% for category in categories %}
-    <div class="category-card">
-        <img src="{{ category.image.url }}" alt="{{ category.name }}" class="category-image">
-        <div class="category-name">{{ category.name }}</div>
-    </div>
-
+        <li>{{ category.name }}</li>
     {% endfor %}
-</div>
+</ul>
 
 <h1>Продукты</h1>
 <ul>

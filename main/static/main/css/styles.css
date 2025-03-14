@@ -148,6 +148,17 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
+
+.block-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: 'Montserrat-black', sans-serif;
+    font-size: 30px;
+    color: #733f27;
+}
+
 .navbar {
     position: sticky;
     top: 2rem;
@@ -234,14 +245,18 @@ body {
 
 #home_first_block {
     background-image: url('/static/main/images/background-2.jpg');
-    color: #eaddda;
-    font-weight: bold;
+    color: #47200f;
+    font-family: 'Montserrat-black', sans-serif;
     font-size: 48px;
     height: calc(100vh - 79px - 4rem);
+    min-height: fit-content;
+    text-align: start;
+    display: flex;
+    align-items: flex-start;
 }
 
 .swiper {
-    width: 80%;
+    width: 100%;
     height: 300px;
 }
 .swiper-slide {
@@ -253,6 +268,32 @@ body {
     border-radius: 10px;
 }
 
+
+.category-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+    width: 100%;
+}
 /* ~~~~Основные стили~~~~ */
 
 
@@ -323,20 +364,17 @@ body {
 
 @media (max-width: 991px) {
     #home_first_block {
-        font-size: 20px;
-        background-image: url('/static/main/images/background-2.jpg');
+        font-size: 40px;
     }
 }
 
 @media (max-width: 767px) {
-    #home_first_block {
-        font-size: 16px;
-    }
+
 }
 
 @media (max-width: 575px) {
     #home_first_block {
-        font-size: 14px;
+        padding: 1rem;
     }
 }
 
