@@ -143,6 +143,11 @@ body {
     min-height: 100vh;
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 .navbar {
     position: sticky;
     top: 2rem;
@@ -228,12 +233,24 @@ body {
 }
 
 #home_first_block {
-    background-image: url('/static/main/images/background.jpg');
+    background-image: url('/static/main/images/background-2.jpg');
     color: #eaddda;
     font-weight: bold;
     font-size: 48px;
-    min-height: 300px;
-    max-height: 500px;
+    height: calc(100vh - 79px - 4rem);
+}
+
+.swiper {
+    width: 80%;
+    height: 300px;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background: #ddd;
+    border-radius: 10px;
 }
 
 /* ~~~~Основные стили~~~~ */
@@ -307,6 +324,7 @@ body {
 @media (max-width: 991px) {
     #home_first_block {
         font-size: 20px;
+        background-image: url('/static/main/images/background-2.jpg');
     }
 }
 

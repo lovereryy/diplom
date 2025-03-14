@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="{% static 'main/css/styles.css' %}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <title>{% block title %}Кафе{% endblock %}</title>
 </head>
 <body>
@@ -53,7 +54,7 @@
         {% endblock %}
 
         <div class="section">
-            <div id="content">
+            <div id="content" class="content">
                 {% block content %}{% endblock %}
             </div>
         </div>
@@ -75,6 +76,40 @@
                 navbar.style.height = null;
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let menu = document.querySelector(".nav-links-mobile");
+            let burger = document.querySelector(".hamburger");
+            let navbar = document.getElementById("navbar");
+
+            function closeMenu() {
+                menu.classList.remove("active");
+                burger.classList.remove("is-active");
+                navbar.style.height = null;
+            }
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("click", function (event) {
+                let isClickInside = menu.contains(event.target) || burger.contains(event.target);
+                if (!isClickInside) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        });
     </script>
         
 </body>
