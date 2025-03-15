@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, Review, TableBooking
+from .models import Category, Product, Review, TableBooking, SpecialOffers
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -22,3 +22,9 @@ class ReviewAdmin(admin.ModelAdmin):
 class TableBookingAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone')
     search_fields = ('name', 'phone')
+
+@admin.register(SpecialOffers)
+class SpecialOffersAdmin(admin.ModelAdmin):
+    list_display = ('date_starting', 'date_ending', 'image')
+    list_filter = ('date_starting', 'date_ending')
+    search_fields = ('date_starting', 'date_ending')

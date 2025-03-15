@@ -7,10 +7,11 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.db import IntegrityError, OperationalError
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.utils import timezone
 import logging
 
-from .models import Product, Category, Review
-from .forms import ReviewForm
+from .models import Product, Category, Review, SpecialOffers
+from .forms import ReviewForm, CustomUserChangeForm  
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +19,16 @@ def home(request):
     try:
         categories = Category.objects.all()
         products = Product.objects.all()
-        return render(request, "main/home.html", {"categories": categories, "products": products})
+
+        # Фильтруем спецпредложения, которые начались и ещё не закончились
+        current_time = timezone.now()
+        specials = SpecialOffers.objects.filter(date_starting__lte=current_time, date_ending__gte=current_time)
+
+        return render(request, "main/home.html", {
+            "categories": categories,
+            "products": products,
+            "specials": specials,
+        })
     except OperationalError as e:
         logger.error(f"Ошибка базы данных: {e}")
         messages.error(request, "Ошибка загрузки данных. Попробуйте позже.")
@@ -119,8 +129,10 @@ def user_logout(request):
 @login_required
 def profile(request):
     try:
+        user = request.user  # Получаем текущего пользователя
+
         if request.method == "POST":
-            form = UserChangeForm(request.POST, instance=request.user)
+            form = CustomUserChangeForm(request.POST, instance=user)
             if form.is_valid():
                 form.save()
                 messages.success(request, "Ваши данные обновлены!")
@@ -128,7 +140,7 @@ def profile(request):
             else:
                 messages.error(request, "Ошибка валидации данных.")
         else:
-            form = UserChangeForm(instance=request.user)
+            form = CustomUserChangeForm(instance=user)  # Загружаем данные пользователя
 
         return render(request, "main/profile.html", {"form": form})
 
@@ -136,6 +148,18 @@ def profile(request):
         logger.exception(f"Ошибка в profile: {e}")
         messages.error(request, "Не удалось обновить профиль. Попробуйте позже.")
         return redirect("profile")
+
+
+@login_required
+def delete_account(request):
+    """Удаление аккаунта пользователя"""
+    if request.method == "POST":
+        user = request.user
+        user.delete()
+        messages.success(request, "Ваш аккаунт удален.")
+        return redirect("home")  # Перенаправляем на главную
+
+    return render(request, "main/delete_account.html")
     
 
 def category_detail(request, category_id):

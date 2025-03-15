@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.conf import settings
+import os
 
 
 # class User(AbstractUser):
@@ -55,3 +55,16 @@ class TableBooking(models.Model):
 
     def __str__(self):
         return f"Бронь на имя {self.name}, номер телефона - {self.phone}"
+    
+def special_offer_image_path(instance, filename):
+    """
+    Формирует путь для загрузки изображения с датой начала акции.
+    Пример пути: specials/2024-03-15/image.jpg
+    """
+    date_folder = instance.date_starting.strftime("%Y-%m-%d")  # Форматируем дату
+    return os.path.join("specials", date_folder, filename)
+
+class SpecialOffers(models.Model):
+    date_starting = models.DateTimeField(verbose_name="Дата начала акции")
+    date_ending = models.DateTimeField(verbose_name="Дата окончания акции")
+    image = models.ImageField(upload_to="specials/", blank=False, null=False, verbose_name="Изображение")

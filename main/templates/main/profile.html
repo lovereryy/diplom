@@ -2,10 +2,22 @@
 
 {% block content %}
 <h1>Личный кабинет</h1>
+
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
+    {{ form.as_p }}  <!-- Поля формы будут автоматически заполнены -->
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
 </form>
-<a href="{% url 'logout' %}">Выйти</a>
+
+<hr>
+
+<!-- Кнопка выхода -->
+<a href="{% url 'logout' %}" class="btn btn-secondary">Выйти</a>
+
+<!-- Кнопка удаления аккаунта -->
+<form method="post" action="{% url 'delete_account' %}" onsubmit="return confirm('Вы уверены, что хотите удалить аккаунт? Это действие необратимо.')">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Удалить аккаунт</button>
+</form>
+
 {% endblock %}
