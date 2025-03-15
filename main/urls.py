@@ -12,6 +12,8 @@ urlpatterns = [
     path("logout/", views.user_logout, name="logout"),  # Выход
     path("profile/", views.profile, name="profile"),  # Личный кабинет
     path("delete_account/", views.delete_account, name="delete_account"),
+    path('contacts/', views.contacts, name='contacts'),
+    path('about/', views.about, name='about'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

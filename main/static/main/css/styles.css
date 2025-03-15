@@ -121,6 +121,45 @@ legend {
 /* ~~~~Сброс стилей~~~~ */
 
 
+/* ~~~~Полоса прокрутки~~~~ */
+
+/* Основной стиль для всех браузеров */
+::-webkit-scrollbar {
+    width: 16px; /* Ширина скроллбара */
+    height: 16px; /* Высота скроллбара (для горизонтального) */
+}
+
+/* Стиль для самого ползунка скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #9a6651; /* Цвет ползунка */
+    border-radius: 16px; /* Скругление углов ползунка */
+    border: 3px solid #f4e9e6; /* Паддинг вокруг ползунка */
+}
+
+/* Стиль для ползунка при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8f5d49; /* Цвет ползунка при наведении */
+    cursor: pointer;
+}
+
+/* Стиль для фона полосы прокрутки */
+::-webkit-scrollbar-track {
+    background-color: #f4e9e6; /* Цвет фона полосы прокрутки */
+    border-radius: 10px; /* Скругление углов */
+}
+
+/* Стиль для горизонтальной полосы прокрутки */
+::-webkit-scrollbar-horizontal {
+    height: 16px;
+}
+
+/* Стиль для вертикальной полосы прокрутки */
+::-webkit-scrollbar-vertical {
+    width: 16px;
+}
+
+/* ~~~~Полоса прокрутки~~~~ */
+
 /* ~~~~Основные стили~~~~ */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -347,6 +386,13 @@ body {
 /* Увеличиваем только фоновое изображение */
 .category-card:hover::after {
     transform: scale(1.1);
+}
+
+.map-container {
+    width: 100%;
+    border-radius: 16px; /* Радиус скругления углов */
+    overflow: hidden; /* Чтобы не показывались углы карты за пределами контейнера */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* ~~~~Основные стили~~~~ */

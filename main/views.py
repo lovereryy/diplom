@@ -176,3 +176,10 @@ def category_detail(request, category_id):
         logger.exception(f"Ошибка в category_detail: {e}")
         messages.error(request, "Произошла ошибка. Попробуйте позже.")
         return redirect("home")
+
+
+def about(request):
+    return render(request, "main/about.html")
+
+def contacts(request):
+    return render(request, "main/contacts.html")
