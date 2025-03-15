@@ -27,11 +27,9 @@
 </div>
 <div class="category-list">
     {% for category in categories %}
-    <div class="category-card">
-        <img src="{{ category.image.url }}" alt="{{ category.name }}" class="category-image">
+    <a href="{% url 'category_detail' category.id %}" class="category-card" style="background-image: url('{{ category.image.url }}');">
         <div class="category-name">{{ category.name }}</div>
-    </div>
-
+    </a>
     {% endfor %}
 </div>
 

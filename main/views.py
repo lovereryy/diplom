@@ -136,3 +136,18 @@ def profile(request):
         logger.exception(f"Ошибка в profile: {e}")
         messages.error(request, "Не удалось обновить профиль. Попробуйте позже.")
         return redirect("profile")
+    
+
+def category_detail(request, category_id):
+    try:
+        category = get_object_or_404(Category, id=category_id)
+
+        return render(request, "main/category_detail.html", {"category": category})
+    
+    except ObjectDoesNotExist:
+        messages.error(request, "Категория не найдена.")
+        return redirect("home")
+    except Exception as e:
+        logger.exception(f"Ошибка в category_detail: {e}")
+        messages.error(request, "Произошла ошибка. Попробуйте позже.")
+        return redirect("home")
