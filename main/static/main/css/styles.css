@@ -127,8 +127,8 @@ body {
     background-color: #fbfaf8;
     color: #47200f;
     width: 100%;
-    display: flex;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -144,6 +144,7 @@ body {
 }
 
 .content {
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -160,21 +161,35 @@ body {
 }
 
 .navbar {
-    position: sticky;
+    position: absolute; /* Изначально не фиксирован */
     top: 2rem;
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
+    left: 2rem;
+    right: 2rem;
+    width: calc(100% - 4rem); /* Отступы по краям */
     background-color: #f4e9e6;
     padding: 16px;
     border-radius: 16px;
     z-index: 1000;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     transition: all 0.3s ease;
+
+    max-width: calc(1920px - 4rem);
+    margin: 0 auto;
+}
+
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 12px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    max-width: unset;
 }
 
 .logo {
@@ -277,11 +292,9 @@ body {
 }
 
 .category-card {
-    width: calc((100% - 40px) / 5);
+    width: calc((100% - 8rem) / 5);
     max-width: 200px;
-    aspect-ratio: 1 / 1;
-    background-size: cover;
-    background-position: center;
+    aspect-ratio: 1 / 1; /* Квадратная карточка */
     position: relative;
     display: flex;
     align-items: center;
@@ -294,28 +307,42 @@ body {
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
-    transition: all 0.3s ease;
-    background-size: 100%;
 }
 
+/* Вложенный фон */
+.category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+/* Затемнение */
 .category-card::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    z-index: 1;
 }
 
+/* Поднимаем текст над фоном */
 .category-name {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     color: #fbfaf8;
+    text-transform: uppercase;
 }
 
-.category-card:hover {
-    background-size: 110%;
+/* Увеличиваем только фоновое изображение */
+.category-card:hover::after {
+    transform: scale(1.1);
 }
-
 
 /* ~~~~Основные стили~~~~ */
 
@@ -342,6 +369,12 @@ body {
     text-align: center;
 }
 
+@media (min-width: 1920px) {
+    #home_first_block {
+        height: calc(50vh - 79px - 4rem);
+    }
+}
+
 @media (min-width: 1200px) {
     .nav-links-mobile.active{
         display: none;
@@ -356,6 +389,9 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         top: 1rem;
+        left: 1rem;
+        right: 1rem;
+        width: calc(100% - 2rem);
     }
     
     .logo-wrapper {

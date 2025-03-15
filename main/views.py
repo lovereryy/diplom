@@ -141,8 +141,9 @@ def profile(request):
 def category_detail(request, category_id):
     try:
         category = get_object_or_404(Category, id=category_id)
+        products = category.products.all()
 
-        return render(request, "main/category_detail.html", {"category": category})
+        return render(request, "main/category_detail.html", {"category": category, "products": products})
     
     except ObjectDoesNotExist:
         messages.error(request, "Категория не найдена.")

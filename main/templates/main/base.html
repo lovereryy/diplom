@@ -10,48 +10,47 @@
     <title>{% block title %}Кафе{% endblock %}</title>
 </head>
 <body>
-    <div class="container">
+    {% block navbar %}
+    <nav class="navbar" id="navbar">
+        <div class="logo-wrapper">
+            <a href="/" class="logo">Уютное кафе</a>
 
-        {% block navbar %}
-        <nav class="navbar" id="navbar">
-            <div class="logo-wrapper">
-                <a href="/" class="logo">Уютное кафе</a>
+            <button class="hamburger hamburger--spring" type="button" onclick="toggleMenu()">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
 
-                <button class="hamburger hamburger--spring" type="button" onclick="toggleMenu()">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-            </div>
+        <div class="nav-links">
+            <a href="/" class="btn light">Главная</a>
+            <a href="#" class="btn light">Меню</a>
+            <a href="#" class="btn light">О нас</a>
+            <a href="#" class="btn light">Контакты</a>
+        </div>
 
-            <div class="nav-links">
-                <a href="/" class="btn light">Главная</a>
-                <a href="#" class="btn light">Меню</a>
-                <a href="#" class="btn light">О нас</a>
-                <a href="#" class="btn light">Контакты</a>
-            </div>
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="btn primary auth-btn">Личный кабинет</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn primary auth-btn">Войти</a>
+        {% endif %}
+
+        <div class="nav-links-mobile">
+            <a href="/" class="btn light">Главная</a>
+            <a href="#" class="btn light">О нас</a>
+            <a href="#" class="btn light">Услуги</a>
+            <a href="#" class="btn light">Контакты</a>
 
             {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="btn primary auth-btn">Личный кабинет</a>
+                <a href="{% url 'profile' %}" class="btn primary">Личный кабинет</a>
             {% else %}
-                <a href="{% url 'login' %}" class="btn primary auth-btn">Войти</a>
+                <a href="{% url 'login' %}" class="btn primary">Войти</a>
             {% endif %}
+        </div>
 
-            <div class="nav-links-mobile">
-                <a href="/" class="btn light">Главная</a>
-                <a href="#" class="btn light">О нас</a>
-                <a href="#" class="btn light">Услуги</a>
-                <a href="#" class="btn light">Контакты</a>
-
-                {% if user.is_authenticated %}
-                    <a href="{% url 'profile' %}" class="btn primary">Личный кабинет</a>
-                {% else %}
-                    <a href="{% url 'login' %}" class="btn primary">Войти</a>
-                {% endif %}
-            </div>
-
-        </nav>
-        {% endblock %}
+    </nav>
+    {% endblock %}
+    <div class="container">
 
         <div class="section">
             <div id="content" class="content">
@@ -81,6 +80,15 @@
             let menu = document.querySelector(".nav-links-mobile");
             let burger = document.querySelector(".hamburger");
             let navbar = document.getElementById("navbar");
+            let navbarOffset = navbar.offsetTop;
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > navbarOffset) {
+                    navbar.classList.add("fixed"); // Добавляем класс, когда проскроллили
+                } else {
+                    navbar.classList.remove("fixed"); // Убираем класс, когда наверху
+                }
+            });
 
             function closeMenu() {
                 menu.classList.remove("active");
