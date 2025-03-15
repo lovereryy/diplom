@@ -1,26 +1,32 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-<h1>{{ product.name }}</h1>
-<p>{{ product.description }}</p>
-<p>Цена: {{ product.price }} руб.</p>
+<div class="product-wrapper">
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+    <div class="product-info">
+        <div class="product-title">{{ product.name }}</div>
+        <div class="product-description">{{ product.description }}</div>
+        <div class="product-description">Цена: {{ product.price }} руб.</div>
+        <div class="product-title">Отзывы</div>
+        {% for review in reviews %}
+            <p>{{ review.user.username }} - Оценка: {{ review.score }}</p>
+            {% if review.text %}
+                <p>{{ review.text }}</p>
+            {% endif %}
+        {% endfor %}
 
-<h2>Отзывы</h2>
-{% for review in reviews %}
-    <p>{{ review.user.username }} - Оценка: {{ review.score }}</p>
-    {% if review.text %}
-        <p>{{ review.text }}</p>
-    {% endif %}
-{% endfor %}
+        {% if user.is_authenticated %}
+            <h2>Оставить отзыв</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Отправить</button>
+            </form>
+        {% else %}
+            <p><a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.</p>
+        {% endif %}
+    </div>
+</div>
 
-{% if user.is_authenticated %}
-    <h2>Оставить отзыв</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Отправить</button>
-    </form>
-{% else %}
-    <p><a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.</p>
-{% endif %}
+
 {% endblock %}

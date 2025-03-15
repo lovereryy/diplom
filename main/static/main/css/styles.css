@@ -325,6 +325,7 @@ body {
     width: auto;
     height: 100%;
     object-fit: contain;
+    border-radius: 16px;
 }
 
 
@@ -393,6 +394,36 @@ body {
     border-radius: 16px; /* Радиус скругления углов */
     overflow: hidden; /* Чтобы не показывались углы карты за пределами контейнера */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.product-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.product-image {
+    width: 50%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.product-title {
+    font-family: 'Montserrat-black', sans-serif;
+    font-size: 30px;
+    color: #733f27;
+}
+
+.product-description {
+    font-size: 20px;
 }
 
 /* ~~~~Основные стили~~~~ */
@@ -469,6 +500,14 @@ body {
 
         opacity: 0;
         height: 0;
+    }
+
+    .product-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-image {
+        width: 100%;
     }
 }
 
