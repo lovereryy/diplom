@@ -52,11 +52,13 @@
     {% endblock %}
     <div class="container">
 
+        {% block section %}
         <div class="section">
             <div id="content" class="content">
                 {% block content %}{% endblock %}
             </div>
         </div>
+        {% endblock %}
 
     </div>
 

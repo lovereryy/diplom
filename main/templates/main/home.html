@@ -44,11 +44,17 @@
 <div class="block-header">
     Продукты
 </div>
-<ul>
+
+<div class="product-list">
     {% for product in products %}
-        <li>
-            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - {{ product.price }} руб.
-        </li>
+        <a href="{% url 'product_detail' product.id %}" class="product-card">
+            <img src="{{ product.image.url }}">
+            <div class="product-card-info">
+                <div class="product-card-nmae">{{ product.name }}</div>
+            </div>
+
+        </a>
     {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
