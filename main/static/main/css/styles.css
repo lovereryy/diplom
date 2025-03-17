@@ -472,6 +472,7 @@ body {
 }
 
 .product-card {
+    position: relative;
     width: calc((100% - 8rem) / 5);
     max-width: 200px;
     display: flex;
@@ -485,8 +486,16 @@ body {
     transition: all 0.3s ease;
 }
 
-.product-card:hover {
-    background-color: #f4e9e6;
+.product-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover::after {
+    background: rgba(0, 0, 0, 0.15);
 }
 
 .product-card img{
@@ -494,7 +503,6 @@ body {
     width: 100%;
     object-fit: cover;
     border-radius: 16px 0;
-    overflow: hidden;
     transition: all 0.3s ease;
 }
 
@@ -503,15 +511,98 @@ body {
     flex-direction: column;
     padding: 1rem;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    height: 100%;
     gap: 1rem;
 }
 
-.product-card-nmae {
+.product-card-name {
     font-weight: bold;
     text-align: center;
 }
 
+
+.login-wrapper {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.login-form div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form div input{
+    border-radius: 16px;
+    padding: 1rem;
+    background-color: #fbfaf8;
+}
+
+.login-form div label{
+    font-weight: bold;
+}
+
+.login-link {
+    color: #c3a79c !important;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.login-link:hover {
+    color: #a17d6e !important;
+}
+
+.helptext {
+    color: #c3a79c;
+    display: none !important;
+}
+
+/* Общий стиль для ошибок */
+.error-message, .errorlist {
+    background: #ffebeb;
+    border: 1px solid #ff4f4f;
+    color: #d32f2f;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+/* Стилизация ошибок у конкретных полей */
+.errorlist li {
+    padding: 1rem;
+    list-style: none;
+    margin: 5px 0;
+}
+
+/* Ошибки внутри полей */
+.login-form div:has(.errorlist) input {
+    border-color: #ff4f4f;
+    background-color: #ffeeee;
+}
+
+/* Убираем стандартные маркеры списка */
+.errorlist {
+    padding: 0;
+}
 /* ~~~~Основные стили~~~~ */
 
 

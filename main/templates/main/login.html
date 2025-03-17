@@ -5,10 +5,21 @@
 {% block navbar %}{% endblock %}
 
 {% block content %}
-<h1>Вход</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Войти</button>
-</form>
+<div class="login-wrapper">
+    <a href="{% url 'home' %}" class="logo">Уютное кафе</a>
+
+    <div class="block-header">
+        Вход
+    </div>
+
+    <form method="post" class="login-form">
+        {% csrf_token %}
+
+        {{ form.as_div }}
+        <button type="submit" class="btn primary">Войти</button>
+        <a href="{% url 'register' %}" class="login-link">Впервые у нас?<br>Зарегистрируйтесь!</a>
+    </form>
+
+</div>
+
 {% endblock %}

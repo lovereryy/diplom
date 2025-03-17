@@ -82,7 +82,7 @@
             let menu = document.querySelector(".nav-links-mobile");
             let burger = document.querySelector(".hamburger");
             let navbar = document.getElementById("navbar");
-            let navbarOffset = navbar.offsetTop;
+            let navbarOffset = navbar?.offsetTop;
 
             window.addEventListener("scroll", function () {
                 if (window.scrollY > navbarOffset) {
@@ -110,6 +110,22 @@
                     closeMenu();
                 }
             });
+
+            // setTimeout(function () {
+            //     let errorMessages = document.querySelectorAll(".errorlist, .error-message");
+            //     console.log("Найденные ошибки:", errorMessages); // Проверяем в консоли, находит ли ошибки
+
+            //     errorMessages.forEach(function (message) {
+            //         message.style.transition = "opacity 0.5s ease";
+            //         message.style.opacity = "0";
+
+            //         setTimeout(() => {
+            //             if (message.parentNode) {
+            //                 message.parentNode.removeChild(message);
+            //             }
+            //         }, 500);
+            //     });
+            // }, 3000);
         });
     </script>
 

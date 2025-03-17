@@ -50,9 +50,9 @@
         <a href="{% url 'product_detail' product.id %}" class="product-card">
             <img src="{{ product.image.url }}">
             <div class="product-card-info">
-                <div class="product-card-nmae">{{ product.name }}</div>
+                <div class="product-card-name">{{ product.name }}</div>
+                <div>{{ product.price }} ₽</div>
             </div>
-
         </a>
     {% endfor %}
 </div>

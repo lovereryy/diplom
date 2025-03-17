@@ -1,17 +1,14 @@
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
-from django.contrib.auth.models import User
 from django.contrib import messages
-from django.http import JsonResponse
 from django.db import IntegrityError, OperationalError
-from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 import logging
 
 from .models import Product, Category, Review, SpecialOffers
-from .forms import ReviewForm, CustomUserChangeForm  
+from .forms import ReviewForm, CustomUserChangeForm, CustomAuthenticationForm, CustomUserCreationForm
 
 logger = logging.getLogger(__name__)
 
@@ -79,7 +76,7 @@ def product_detail(request, product_id):
 def register(request):
     try:
         if request.method == "POST":
-            form = UserCreationForm(request.POST)
+            form = CustomUserCreationForm(request.POST)
             if form.is_valid():
                 user = form.save()
                 login(request, user)
@@ -88,7 +85,7 @@ def register(request):
             else:
                 messages.error(request, "Ошибка регистрации. Проверьте введенные данные.")
         else:
-            form = UserCreationForm()
+            form = CustomUserCreationForm()
         return render(request, "main/register.html", {"form": form})
 
     except Exception as e:
@@ -99,7 +96,7 @@ def register(request):
 def user_login(request):
     try:
         if request.method == "POST":
-            form = AuthenticationForm(request, data=request.POST)
+            form = CustomAuthenticationForm(request, data=request.POST)
             if form.is_valid():
                 user = form.get_user()
                 login(request, user)
@@ -108,7 +105,7 @@ def user_login(request):
             else:
                 messages.error(request, "Ошибка авторизации. Проверьте данные.")
         else:
-            form = AuthenticationForm()
+            form = CustomAuthenticationForm()
         return render(request, "main/login.html", {"form": form})
 
     except Exception as e:
