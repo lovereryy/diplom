@@ -78,7 +78,9 @@ def register(request):
         if request.method == "POST":
             form = CustomUserCreationForm(request.POST)
             if form.is_valid():
-                user = form.save()
+                user = form.save(commit=False)
+                user.username = user.email  # Используем email как username
+                user.save()
                 login(request, user)
                 messages.success(request, "Вы успешно зарегистрировались!")
                 return redirect("home")

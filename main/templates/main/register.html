@@ -8,17 +8,37 @@
 <div class="login-wrapper">
     <a href="{% url 'home' %}" class="logo">Уютное кафе</a>
 
-    <div class="block-header">
-        Регистрация
-    </div>
+    <div class="block-header">Регистрация</div>
 
     <form method="post" class="login-form">
         {% csrf_token %}
 
-        {{ form.as_div }}
+        <div class="input-wrapper">
+            <label for="{{ form.first_name.id_for_label }}">Имя:</label>
+            {{ form.first_name }}
+            <div class="helptext">Введите ваше реальное имя.</div>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+            <div class="helptext">Введите действующий email-адрес.</div>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="{{ form.password1.id_for_label }}">Пароль:</label>
+            {{ form.password1 }}
+            <div class="helptext">Пароль должен содержать минимум 8 символов.</div>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="{{ form.password2.id_for_label }}">Подтверждение пароля:</label>
+            {{ form.password2 }}
+            <div class="helptext">Введите пароль ещё раз для подтверждения.</div>
+        </div>
+
         <button type="submit" class="btn primary">Зарегистрироваться</button>
         <a href="{% url 'login' %}" class="login-link">Уже есть аккаунт?<br>Войти!</a>
     </form>
-
 </div>
 {% endblock %}

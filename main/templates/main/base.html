@@ -62,6 +62,16 @@
 
     </div>
 
+    <footer class="footer">
+        <a href="{% url 'home' %}" class="logo light">Уютное кафе</a>
+        <div class="footer-links">
+            <a href="{% url 'home' %}" class="">Главная</a>
+            <a href="#" class="">О нас</a>
+            <a href="{% url 'about' %}" class="">Услуги</a>
+            <a href="{% url 'contacts' %}" class="">Контакты</a>
+        </div>
+    </footer>
+
     <script>
         function toggleMenu() {
             let menu = document.querySelector(".nav-links-mobile");

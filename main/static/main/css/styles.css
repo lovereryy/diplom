@@ -145,7 +145,6 @@ legend {
 /* Стиль для фона полосы прокрутки */
 ::-webkit-scrollbar-track {
     background-color: #f4e9e6; /* Цвет фона полосы прокрутки */
-    border-radius: 10px; /* Скругление углов */
 }
 
 /* Стиль для горизонтальной полосы прокрутки */
@@ -156,6 +155,14 @@ legend {
 /* Стиль для вертикальной полосы прокрутки */
 ::-webkit-scrollbar-vertical {
     width: 16px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #733f27 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #733f27 !important;
 }
 
 /* ~~~~Полоса прокрутки~~~~ */
@@ -197,6 +204,7 @@ body {
     font-family: 'Montserrat-black', sans-serif;
     font-size: 30px;
     color: #733f27;
+    text-align: center;
 }
 
 .navbar {
@@ -225,7 +233,7 @@ body {
     left: 0;
     width: 100%;
     border-radius: 0;
-    padding: 12px 20px;
+    padding: 1rem 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     max-width: unset;
@@ -239,6 +247,16 @@ body {
 
 .logo:hover {
     color: #5d321f !important;
+}
+
+.logo.light {
+    font-family: 'Docker', sans-serif;
+    font-size: 28px;
+    color: #fbfaf8 !important;
+}
+
+.logo.light:hover {
+    color: #c3a79c !important;
 }
 
 .nav-links {
@@ -603,6 +621,30 @@ body {
 .errorlist {
     padding: 0;
 }
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px 16px 0 0;
+    background-color: #5d321f;
+    color: #fbfaf8;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links a:hover {
+    color: #c3a79c;
+}
 /* ~~~~Основные стили~~~~ */
 
 
@@ -652,6 +694,9 @@ body {
         right: 1rem;
         width: calc(100% - 2rem);
     }
+    .navbar.fixed {
+        padding: 1rem;
+    }
     
     .logo-wrapper {
         width: 100%;
@@ -683,8 +728,12 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
     .product-image {
         width: 100%;
+    }
+    .footer-links {
+        flex-direction: column;
     }
 }
 
@@ -701,6 +750,15 @@ body {
     }
 
     .category-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-card {
         width: 100%;
         max-width: 300px;
     }
