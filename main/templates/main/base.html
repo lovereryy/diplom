@@ -37,8 +37,8 @@
 
         <div class="nav-links-mobile">
             <a href="{% url 'home' %}" class="btn light">Главная</a>
-            <a href="#" class="btn light">О нас</a>
-            <a href="{% url 'about' %}" class="btn light">Услуги</a>
+            <a href="#" class="btn light">Меню</a>
+            <a href="{% url 'about' %}" class="btn light">О нас</a>
             <a href="{% url 'contacts' %}" class="btn light">Контакты</a>
 
             {% if user.is_authenticated %}
@@ -65,10 +65,10 @@
     <footer class="footer">
         <a href="{% url 'home' %}" class="logo light">Уютное кафе</a>
         <div class="footer-links">
-            <a href="{% url 'home' %}" class="">Главная</a>
-            <a href="#" class="">О нас</a>
-            <a href="{% url 'about' %}" class="">Услуги</a>
-            <a href="{% url 'contacts' %}" class="">Контакты</a>
+            <a href="{% url 'home' %}">Главная</a>
+            <a href="#">Меню</a>
+            <a href="{% url 'about' %}">О нас</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
         </div>
     </footer>
 
@@ -92,7 +92,12 @@
             let menu = document.querySelector(".nav-links-mobile");
             let burger = document.querySelector(".hamburger");
             let navbar = document.getElementById("navbar");
-            let navbarOffset = navbar?.offsetTop;
+
+            function updateNavbarOffset() {
+                return navbar.getBoundingClientRect().top + window.scrollY;
+            }
+
+            let navbarOffset = updateNavbarOffset();
 
             window.addEventListener("scroll", function () {
                 if (window.scrollY > navbarOffset) {
@@ -100,6 +105,10 @@
                 } else {
                     navbar.classList.remove("fixed"); // Убираем класс, когда наверху
                 }
+            });
+
+            window.addEventListener("resize", function () {
+                navbarOffset = updateNavbarOffset(); // Пересчитываем, если изменился размер окна
             });
 
             function closeMenu() {
@@ -121,21 +130,24 @@
                 }
             });
 
-            // setTimeout(function () {
-            //     let errorMessages = document.querySelectorAll(".errorlist, .error-message");
-            //     console.log("Найденные ошибки:", errorMessages); // Проверяем в консоли, находит ли ошибки
+            function updateContentMargin() {
+                let navbar = document.getElementById("navbar");
+                let content = document.getElementById("content");
 
-            //     errorMessages.forEach(function (message) {
-            //         message.style.transition = "opacity 0.5s ease";
-            //         message.style.opacity = "0";
+                if (navbar && content) {
+                    let navbarHeightPx = navbar.offsetHeight; // Высота navbar в пикселях
+                    let remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize); // Узнаём, сколько пикселей в 1rem
+                    let totalMarginRem = navbarHeightPx / remInPx + 1; // Переводим navbarHeight в rem и прибавляем отступ
 
-            //         setTimeout(() => {
-            //             if (message.parentNode) {
-            //                 message.parentNode.removeChild(message);
-            //             }
-            //         }, 500);
-            //     });
-            // }, 3000);
+                    content.style.marginTop = `${totalMarginRem}rem`;
+                }
+            }
+
+            // Устанавливаем отступ при загрузке страницы
+            updateContentMargin();
+
+            // Обновляем отступ при изменении размера окна
+            window.addEventListener("resize", updateContentMargin);
         });
     </script>
 

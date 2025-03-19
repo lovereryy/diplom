@@ -190,7 +190,6 @@ body {
 }
 
 .content {
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
