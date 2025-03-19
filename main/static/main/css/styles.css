@@ -673,7 +673,7 @@ body {
     font-size: 14px;
     color: #47200f;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 

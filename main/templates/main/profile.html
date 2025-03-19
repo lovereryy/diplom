@@ -2,50 +2,54 @@
 {% load static %}
 
 {% block content %}
-<h1>Личный кабинет</h1>
 
-<form method="post" class="row g-3">
-    {% csrf_token %}
+<div class="block-header">
+    Ваши данные
+</div>
+<div class="login-wrapper">
+    <form method="post" class="login-form">
+        {% csrf_token %}
 
-    <!-- Пример: у вас есть поля формы, например "username" и "email" -->
-    <div class="col-md-6">
-        <label for="id_username" class="form-label">{{ form.username.label }}</label>
-        {{ form.username }}
-        <!-- Вывод ошибок, связанных с полем username -->
-        {% if form.username.errors %}
-            <div class="text-danger">
-                {{ form.username.errors }}
-            </div>
-        {% endif %}
-    </div>
+        <div>
+            <label for="first_name" class="form-label">{{ form.first_name.label }}</label>
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+                <div class="error-message">{{ form.first_name.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <div class="">
+            <label for="id_username" class="">{{ form.username.label }}</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error-message">{{ form.username.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <div class="">
+            <label for="id_email" class="">{{ form.email.label }}</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="error-message">{{ form.email.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+    
+        <div class="">
+            <button type="submit" class="btn primary">Сохранить изменения</button>
+        </div>
+    </form>
 
-    <div class="col-md-6">
-        <label for="id_email" class="form-label">{{ form.email.label }}</label>
-        {{ form.email }}
-        <!-- Вывод ошибок, связанных с полем email -->
-        {% if form.email.errors %}
-            <div class="text-danger">
-                {{ form.email.errors }}
-            </div>
-        {% endif %}
-    </div>
+    <a href="{% url 'logout' %}" class="btn secondary">Выйти</a>
 
-    <!-- Если есть ещё поля, повторяем аналогично -->
-    <!-- ... -->
+    <form method="post" action="{% url 'delete_account' %}" onsubmit="return confirm('Вы уверены, что хотите удалить аккаунт? Это действие необратимо.')">
+        {% csrf_token %}
+        <button type="submit" class="btn danger">Удалить аккаунт</button>
+    </form>
+</div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
-    </div>
-</form>
 
 <hr>
 
-<!-- Кнопка выхода -->
-<a href="{% url 'logout' %}" class="btn btn-secondary">Выйти</a>
 
-<!-- Кнопка удаления аккаунта (с подтверждением) -->
-<form method="post" action="{% url 'delete_account' %}" onsubmit="return confirm('Вы уверены, что хотите удалить аккаунт? Это действие необратимо.')">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Удалить аккаунт</button>
-</form>
 {% endblock %}
