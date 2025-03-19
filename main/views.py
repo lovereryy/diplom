@@ -6,6 +6,7 @@ from django.db import IntegrityError, OperationalError
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 import logging
+from django.contrib.auth import get_backends
 
 from .models import Product, Category, Review, SpecialOffers
 from .forms import ReviewForm, CustomUserChangeForm, CustomAuthenticationForm, CustomUserCreationForm
@@ -35,40 +36,51 @@ def home(request):
 def product_detail(request, product_id):
     try:
         product = get_object_or_404(Product, id=product_id)
-        reviews = product.reviews.all()
+        reviews = product.reviews.all().order_by("-created_at")
+        user_review = None  # Отзыв текущего пользователя
+        form = None
 
         if request.user.is_authenticated:
-            if request.method == "POST":
-                form = ReviewForm(request.POST)
-                if form.is_valid():
-                    try:
-                        review, created = Review.objects.get_or_create(
-                            user=request.user, product=product,
-                            defaults={"text": form.cleaned_data["text"], "score": form.cleaned_data["score"]}
-                        )
-                        if not created:
-                            review.text = form.cleaned_data["text"]
-                            review.score = form.cleaned_data["score"]
-                            review.save()
+            # Проверяем, есть ли у текущего пользователя уже отзыв к данному продукту
+            user_review = product.reviews.filter(user=request.user).first()
 
-                        messages.success(request, "Отзыв добавлен!")
-                        return redirect("product_detail", product_id=product.id)
-                    except IntegrityError:
-                        messages.error(request, "Вы уже оставляли отзыв.")
+            # Обработка POST-запроса
+            if request.method == "POST":
+                # Если это удаление отзыва
+                if "delete_review" in request.POST and user_review:
+                    user_review.delete()
+                    messages.success(request, "Ваш отзыв удалён.")
+                    return redirect("product_detail", product_id=product.id)
                 else:
-                    messages.error(request, "Ошибка валидации формы.")
+                    # Создаём или редактируем отзыв (instance=user_review)
+                    form = ReviewForm(request.POST, instance=user_review)
+                    if form.is_valid():
+                        review = form.save(commit=False)
+                        review.user = request.user
+                        review.product = product
+                        review.save()
+                        messages.success(request, "Ваш отзыв сохранён!")
+                        return redirect("product_detail", product_id=product.id)
+                    else:
+                        messages.error(request, "Ошибка валидации формы.")
             else:
-                form = ReviewForm()
+                # GET-запрос: просто показываем форму, привязанную к user_review
+                form = ReviewForm(instance=user_review)
         else:
+            # Если пользователь не авторизован, форма не нужна
             form = None
 
-        return render(request, "main/product_detail.html", {"product": product, "reviews": reviews, "form": form})
-    
+        return render(request, "main/product_detail.html", {
+            "product": product,
+            "reviews": reviews,
+            "form": form,
+            "user_review": user_review,
+        })
+
     except ObjectDoesNotExist:
         messages.error(request, "Продукт не найден.")
         return redirect("home")
     except Exception as e:
-        logger.exception(f"Ошибка в product_detail: {e}")
         messages.error(request, "Произошла ошибка. Попробуйте позже.")
         return redirect("home")
 
@@ -78,9 +90,7 @@ def register(request):
         if request.method == "POST":
             form = CustomUserCreationForm(request.POST)
             if form.is_valid():
-                user = form.save(commit=False)
-                user.username = user.email  # Используем email как username
-                user.save()
+                user = form.save()
                 login(request, user)
                 messages.success(request, "Вы успешно зарегистрировались!")
                 return redirect("home")
@@ -114,6 +124,8 @@ def user_login(request):
         logger.exception(f"Ошибка при входе: {e}")
         messages.error(request, "Ошибка входа. Попробуйте позже.")
         return redirect("home")
+
+
 
 @login_required
 def user_logout(request):

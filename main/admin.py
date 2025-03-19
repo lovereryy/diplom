@@ -14,7 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('user', 'product', 'score', 'created_at')
+    list_display = ('user', 'text', 'score', 'created_at')
     search_fields = ('user__username', 'product__name')
     list_filter = ('score', 'created_at')
 

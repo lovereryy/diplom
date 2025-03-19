@@ -1,5 +1,6 @@
 from django import forms
 from .models import Review
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.core.exceptions import ValidationError
@@ -30,44 +31,46 @@ class CustomUserChangeForm(forms.ModelForm):
         self.fields["email"].initial = self.instance.email
 
 class CustomAuthenticationForm(AuthenticationForm):
-    email = forms.EmailField(
-        label="Email",
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Введите email'}),
+    username = forms.CharField(
+        label="Имя пользователя",
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите имя пользователя'}),
     )
     password = forms.CharField(
         label="Пароль",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Введите пароль'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Введите пароль'}),
     )
+
 
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(
         label="Имя",
-        help_text="Введите ваше реальное имя.",
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите имя'}),
+    )
+    username = forms.CharField(
+        label="Имя пользователя",
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите имя пользователя'}),
     )
     email = forms.EmailField(
         label="Email",
-        help_text="Введите действующий email-адрес.",
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Введите email'}),
     )
     password1 = forms.CharField(
         label="Пароль",
-        help_text="Пароль должен содержать минимум 8 символов.",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Придумайте пароль'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Придумайте пароль'}),
     )
     password2 = forms.CharField(
         label="Подтверждение пароля",
-        help_text="Введите пароль ещё раз для подтверждения.",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Повторите пароль'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Повторите пароль'}),
     )
 
     class Meta:
         model = User
-        fields = ("first_name", "email", "password1", "password2")
+        fields = ("first_name", "username", "email", "password1", "password2")
 
     def clean_email(self):
-        """ Проверяем, что email уникальный """
         email = self.cleaned_data.get("email")
         if User.objects.filter(email=email).exists():
             raise ValidationError("Этот email уже используется.")
         return email
+
+

@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 
-{% block title %}Регистрация{% endblock %}
+{% block title %}Вход{% endblock %}
 
 {% block navbar %}{% endblock %}
 
@@ -8,37 +8,59 @@
 <div class="login-wrapper">
     <a href="{% url 'home' %}" class="logo">Уютное кафе</a>
 
-    <div class="block-header">Регистрация</div>
-
+    <div class="block-header">
+        Регистрация
+    </div>
+    
     <form method="post" class="login-form">
         {% csrf_token %}
-
-        <div class="input-wrapper">
-            <label for="{{ form.first_name.id_for_label }}">Имя:</label>
-            {{ form.first_name }}
-            <div class="helptext">Введите ваше реальное имя.</div>
+        
+        <div>
+            <label for="first_name" class="form-label">Имя</label>
+            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Введите имя" required>
+            {% if form.first_name.errors %}
+                <div class="error-message">{{ form.first_name.errors.0 }}</div>
+            {% endif %}
         </div>
-
-        <div class="input-wrapper">
-            <label for="{{ form.email.id_for_label }}">Email:</label>
-            {{ form.email }}
-            <div class="helptext">Введите действующий email-адрес.</div>
+    
+        <div>
+            <label for="username" class="form-label">Имя пользователя</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Введите имя пользователя" required>
+            {% if form.username.errors %}
+                <div class="error-message">{{ form.username.errors.0 }}</div>
+            {% endif %}
         </div>
-
-        <div class="input-wrapper">
-            <label for="{{ form.password1.id_for_label }}">Пароль:</label>
-            {{ form.password1 }}
-            <div class="helptext">Пароль должен содержать минимум 8 символов.</div>
+    
+        <div>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Введите email" required>
+            {% if form.email.errors %}
+                <div class="error-message">{{ form.email.errors.0 }}</div>
+            {% endif %}
         </div>
-
-        <div class="input-wrapper">
-            <label for="{{ form.password2.id_for_label }}">Подтверждение пароля:</label>
-            {{ form.password2 }}
-            <div class="helptext">Введите пароль ещё раз для подтверждения.</div>
+    
+        <div>
+            <label for="password1" class="form-label">Пароль</label>
+            <input type="password" name="password1" id="password1" class="form-control" placeholder="Придумайте пароль" required>
+            {% if form.password1.errors %}
+                <div class="error-message">{{ form.password1.errors.0 }}</div>
+            {% endif %}
         </div>
-
+    
+        <div>
+            <label for="password2" class="form-label">Подтверждение пароля</label>
+            <input type="password" name="password2" id="password2" class="form-control" placeholder="Повторите пароль" required>
+            {% if form.password2.errors %}
+                <div class="error-message">{{ form.password2.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
         <button type="submit" class="btn primary">Зарегистрироваться</button>
-        <a href="{% url 'login' %}" class="login-link">Уже есть аккаунт?<br>Войти!</a>
     </form>
+    
+    
+    
+    <a href="{% url 'login' %}" class="login-link">Уже есть аккаунт?<br>Войти!</a>
 </div>
+
 {% endblock %}
