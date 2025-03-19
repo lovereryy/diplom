@@ -13,43 +13,48 @@
         <div class="review-container">
             {% for review in reviews %}
                 {% if review.user == request.user %}
-                <div class="review-wrapper">
-                    <div class="review">
-                        <div class="review-header">
+                    <div class="review-wrapper">
+                        <div class="review">
+                            <div class="review-header">
 
-                            <strong>Ваш отзыв</strong>
+                                <strong>Ваш отзыв</strong>
 
-                            <strong>{{ review.created_at|date:"d.m.Y" }}</strong>
-                            <strong class="review-score">⭐ {{ review.score }}</strong>
+                                <strong>{{ review.created_at|date:"d.m.Y" }}</strong>
+                                <strong class="review-score">⭐ {{ review.score }}</strong>
+                            </div>
+                            <div class="review-text">{{ review.text }}</div>
                         </div>
-                        <div class="review-text">{{ review.text }}</div>
+                        <div class="wrapper-row" style="margin-bottom: 2rem;">
+                            <button id="edit-review-btn" class="btn primary" style="font-size: 14px;">Редактировать</button>
+                            <form method="post" class="delete-form">
+                                {% csrf_token %}
+                                <button type="submit" class="btn danger" name="delete_review" value="true"
+                                        style="font-size: 14px;"
+                                        onclick="return confirm('Удалить отзыв?')">
+                                    Удалить
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                    
-                    <form method="post" class="delete-form">
-                        {% csrf_token %}
-                        <button type="submit" class="btn danger" name="delete_review" value="true"
-                                onclick="return confirm('Удалить отзыв?')">
-                            Удалить
-                        </button>
-                    </form>
-                </div>
 
                 {% else %}
-                    <div class="review">
-                        <div class="review-header">
+                    <div class="review-wrapper">
+                        <div class="review">
+                            <div class="review-header">
 
-                            <strong>{{ review.user.username }}</strong>
-                            <strong>{{ review.created_at|date:"d.m.Y" }}</strong>
-                            <strong class="review-score">⭐ {{ review.score }}</strong>
+                                <strong>{{ review.user.username }}</strong>
+                                <strong>{{ review.created_at|date:"d.m.Y" }}</strong>
+                                <strong class="review-score">⭐ {{ review.score }}</strong>
+                            </div>
+                            <div class="review-text">{{ review.text }}</div>
                         </div>
-                        <div class="review-text">{{ review.text }}</div>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
 
         {% if user.is_authenticated %}
-        <form method="post" class="review-form">
+        <form method="post" class="review-form" id="review-form" {% if user_review %}style="display: none;"{% endif %}>
             {% csrf_token %}
             <textarea name="text" class="review-input" placeholder="Напишите ваш отзыв..." required>{{ form.text.value|default_if_none:"" }}</textarea>
             <select name="score" class="review-score-select">
@@ -59,8 +64,34 @@
                 <option value="2" {% if form.score.value == 2 %}selected{% endif %}>2 - Плохо</option>
                 <option value="1" {% if form.score.value == 1 %}selected{% endif %}>1 - Ужасно</option>
             </select>
-            <button type="submit" class="btn primary">Отправить</button>
+            <div class="wrapper-row">
+                <button type="submit" class="btn primary">Отправить</button>
+                <button type="button" id="cancel-edit-btn" class="btn secondary" style="display: none;">Отмена</button>
+            </div>
         </form>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const userHasReview = {{ user_review|yesno:"true,false" }};
+                const editBtn = document.getElementById("edit-review-btn");
+                const reviewForm = document.getElementById("review-form");
+                const cancelBtn = document.getElementById("cancel-edit-btn");
+
+                if (editBtn) {
+                    editBtn.addEventListener("click", function() {
+                        reviewForm.style.display = "flex";
+                        cancelBtn.style.display = "inline-block";
+                    });
+                }
+
+                if (cancelBtn) {
+                    cancelBtn.addEventListener("click", function() {
+                        reviewForm.style.display = "none";
+                        cancelBtn.style.display = "none";
+                    });
+                }
+            });
+        </script>
 
         {% else %}
         <p><a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.</p>
