@@ -168,6 +168,11 @@ legend {
 /* ~~~~Полоса прокрутки~~~~ */
 
 /* ~~~~Основные стили~~~~ */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fbfaf8;
@@ -372,9 +377,8 @@ body {
 }
 
 .category-card {
-    width: calc((100% - 8rem) / 5);
-    max-width: 200px;
-    aspect-ratio: 1 / 1; /* Квадратная карточка */
+    width: calc((100% - 2rem) / 2);
+    aspect-ratio: 2 / 1;
     position: relative;
     display: flex;
     align-items: center;
@@ -510,37 +514,50 @@ body {
 
 .product-card {
     position: relative;
-    width: calc((100% - 8rem) / 5);
-    max-width: 200px;
+    width: calc((100% - 4rem) / 3);
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     border-radius: 16px;
     overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    font-size: 20px;
 }
 
 .product-card::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(175, 154, 126, 0);
     transition: all 0.3s ease;
 }
 
 .product-card:hover::after {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(131, 129, 127, 0.15);
+}
+
+.product-card-img-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    height: fit-content;
+    aspect-ratio: 1.2 / 1;
+
 }
 
 .product-card img{
-    height: 8rem;
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 16px 0;
+    border-radius: 16px;
     transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.product-card:hover img{
+    transform: scale(1.1);
 }
 
 .product-card-info {
@@ -548,15 +565,16 @@ body {
     flex-direction: column;
     padding: 1rem;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    height: 100%;
     gap: 1rem;
 }
 
 .product-card-name {
-    font-weight: bold;
+    font-family: 'Montserrat-black', sans-serif;
     text-align: center;
+    font-size: 24px;
+    color: #733f27;
 }
 
 
@@ -732,6 +750,45 @@ body {
     cursor: pointer;
 }
 
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.profile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.category-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.category-links-element {
+    padding: 8px 16px;
+    border: 1px solid #e1815c !important;
+    color: #e1815c !important;
+    background-color: transparent !important;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.category-links-element:hover {
+    background-color: #e1815c !important;
+    color: #f4e9e6 !important;
+}
+
+.category-section {
+    scroll-margin-top: 100px; 
+  }
 /* ~~~~Основные стили~~~~ */
 
 
@@ -826,6 +883,10 @@ body {
     .product-info {
         width: 100%;
     }
+
+    .profile-wrapper {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 991px) {
@@ -842,7 +903,8 @@ body {
 
     .category-card {
         width: 100%;
-        max-width: 300px;
+        aspect-ratio: 1 / 1;
+        max-height: 50vh;
     }
 
     .product-list {
@@ -851,7 +913,10 @@ body {
     }
     .product-card {
         width: 100%;
-        max-width: 300px;
+    }
+    .product-card-img-wrapper {
+        aspect-ratio: 1 / 1;
+        max-height: 50vh;
     }
 }
 

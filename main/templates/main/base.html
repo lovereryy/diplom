@@ -24,7 +24,7 @@
 
         <div class="nav-links">
             <a href="{% url 'home' %}" class="btn light">Главная</a>
-            <a href="#" class="btn light">Меню</a>
+            <a href="{% url 'menu' %}" class="btn light">Меню</a>
             <a href="{% url 'about' %}" class="btn light">О нас</a>
             <a href="{% url 'contacts' %}" class="btn light">Контакты</a>
         </div>
@@ -37,7 +37,7 @@
 
         <div class="nav-links-mobile">
             <a href="{% url 'home' %}" class="btn light">Главная</a>
-            <a href="#" class="btn light">Меню</a>
+            <a href="{% url 'menu' %}" class="btn light">Меню</a>
             <a href="{% url 'about' %}" class="btn light">О нас</a>
             <a href="{% url 'contacts' %}" class="btn light">Контакты</a>
 
@@ -63,10 +63,10 @@
     </div>
 
     <footer class="footer">
-        <a href="{% url 'home' %}" class="logo light">Уютное кафе</a>
+        <a href="{% url 'home' %}" class="logo light" style="text-align: center;">Уютное кафе</a>
         <div class="footer-links">
             <a href="{% url 'home' %}">Главная</a>
-            <a href="#">Меню</a>
+            <a href="{% url 'menu' %}">Меню</a>
             <a href="{% url 'about' %}">О нас</a>
             <a href="{% url 'contacts' %}">Контакты</a>
         </div>

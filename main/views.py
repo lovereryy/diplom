@@ -173,24 +173,20 @@ def delete_account(request):
     return render(request, "main/delete_account.html")
     
 
-def category_detail(request, category_id):
-    try:
-        category = get_object_or_404(Category, id=category_id)
-        products = category.products.all()
-
-        return render(request, "main/category_detail.html", {"category": category, "products": products})
-    
-    except ObjectDoesNotExist:
-        messages.error(request, "Категория не найдена.")
-        return redirect("home")
-    except Exception as e:
-        logger.exception(f"Ошибка в category_detail: {e}")
-        messages.error(request, "Произошла ошибка. Попробуйте позже.")
-        return redirect("home")
-
-
 def about(request):
     return render(request, "main/about.html")
 
 def contacts(request):
     return render(request, "main/contacts.html")
+
+def menu(request):
+    try:
+        categories = Category.objects.prefetch_related('products').all()
+
+        return render(request, "main/menu.html", {
+            "categories": categories,
+        })
+    except OperationalError as e:
+        logger.error(f"Ошибка базы данных: {e}")
+        messages.error(request, "Ошибка загрузки данных. Попробуйте позже.")
+        return redirect("home")

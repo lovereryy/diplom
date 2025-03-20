@@ -35,26 +35,11 @@
 </div>
 <div class="category-list">
     {% for category in categories %}
-    <a href="{% url 'category_detail' category.id %}" class="category-card" style="background-image: url('{{ category.image.url }}');">
+    <a href="{% url 'menu' %}#category-{{ category.id }}" class="category-card" style="background-image: url('{{ category.image.url }}');">
         <div class="category-name">{{ category.name }}</div>
     </a>
     {% endfor %}
 </div>
 
-<div class="block-header">
-    Продукты
-</div>
-
-<div class="product-list">
-    {% for product in products %}
-        <a href="{% url 'product_detail' product.id %}" class="product-card">
-            <img src="{{ product.image.url }}">
-            <div class="product-card-info">
-                <div class="product-card-name">{{ product.name }}</div>
-                <div>{{ product.price }} ₽</div>
-            </div>
-        </a>
-    {% endfor %}
-</div>
 
 {% endblock %}

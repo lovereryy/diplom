@@ -2,41 +2,38 @@
 
 {% block content %}
 
-<div class="info-block center" id="home_first_block">
-    Любимые блюда<br>
-    рядом с вами!
+<div class="block-header">
+    Наше меню
 </div>
 
-<div class="block-header">
-    Специальные предложения
-</div>
 
-<div class="swiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">Слайд 1</div>
-        <div class="swiper-slide">Слайд 2</div>
-        <div class="swiper-slide">Слайд 3</div>
-        <div class="swiper-slide">Слайд 4</div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-</div>
-<div class="block-header">
-    Меню
-</div>
-<ul>
+<div class="category-links">
     {% for category in categories %}
-        <li>{{ category.name }}</li>
+        <a href="#category-{{ category.id }}" class="category-links-element">{{ category.name }}</a>
     {% endfor %}
-</ul>
+</div>
 
-<h1>Продукты</h1>
-<ul>
-    {% for product in products %}
-        <li>
-            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - {{ product.price }} руб.
-        </li>
-    {% endfor %}
-</ul>
+<!-- Список категорий с товарами -->
+{% for category in categories %}
+    <div class="category-section" id="category-{{ category.id }}">
+        <div class="block-header" style="margin-bottom: 2rem;">
+            {{ category.name }}
+        </div>
+
+        <div class="product-list">
+            {% for product in category.products.all %}
+                <a href="{% url 'product_detail' product.id %}" class="product-card">
+                    <div class="product-card-img-wrapper">
+                        <img src="{{ product.image.url }}">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-card-name">{{ product.name }}</div>
+                        <div>{{ product.price|floatformat:"0" }} ₽</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
 {% endblock %}

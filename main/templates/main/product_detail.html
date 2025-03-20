@@ -6,7 +6,7 @@
     <div class="product-info">
         <div class="product-title">{{ product.name }}</div>
         <div class="product-description">{{ product.description }}</div>
-        <div class="product-description">Цена: {{ product.price }} руб.</div>
+        <div class="product-description">Цена: {{ product.price|floatformat:"0" }} ₽</div>
 
         <div class="product-title">Отзывы</div>
 
