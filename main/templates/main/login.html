@@ -16,14 +16,6 @@
     <form method="post" class="login-form">
         {% csrf_token %}
 
-        {% if messages %}
-            <div class="error-message">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            </div>
-        {% endif %}
-
         {% if form.non_field_errors %}
             <div class="error-message">
                 {{ form.non_field_errors.0 }}
