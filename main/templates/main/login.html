@@ -1,0 +1,48 @@
+{% extends "main/base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+    <a href="{% url 'home' %}" class="logo">Уютное кафе</a>
+
+    <div class="block-header">
+        Вход
+    </div>
+
+    
+    <form method="post" class="login-form">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="error-message">
+                {{ form.non_field_errors.0 }}
+            </div>
+        {% endif %}
+    
+        <div>
+            <label for="username" class="form-label">Имя пользователя</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Введите имя пользователя" required>
+            {% if form.username.errors %}
+                <div class="error-message">{{ form.username.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <div>
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Введите пароль" required>
+            {% if form.password.errors %}
+                <div class="error-message">{{ form.password.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <button type="submit" class="btn primary">Войти</button>
+    </form>
+    
+    
+    
+    <a href="{% url 'register' %}" class="login-link">Впервые у нас?<br>Зарегистрируйтесь!</a>
+</div>
+{% endblock %}

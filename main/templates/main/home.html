@@ -1,0 +1,81 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<div class="info-block center" id="home_first_block">
+    Любимые блюда<br>
+    рядом с вами!
+</div>
+
+{% if specials %}
+<div class="block-header">
+    Специальные предложения
+</div>
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        {% for special in specials %}
+            <div class="swiper-slide">
+                <!-- Выводим изображение акции -->
+                {% if special.image %}
+                    <img src="{{ special.image.url }}" alt="Акция" />
+                {% else %}
+                    <p>Изображение не доступно</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+{% endif %}
+
+<div class="block-header">
+    Меню
+</div>
+
+<div class="category-list">
+    {% for category in categories %}
+    <a href="{% url 'menu' %}#category-{{ category.id }}" class="category-card" style="background-image: url('{{ category.image.url }}');">
+        <div class="category-name">{{ category.name }}</div>
+    </a>
+    {% endfor %}
+</div>
+
+<div class="booking-wrapper">
+    <form method="post" class="booking-form">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="error-message">
+                {{ form.non_field_errors.0 }}
+            </div>
+        {% endif %}
+    
+        <div>
+            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Ваше имя" required>
+            {% if form.name.errors %}
+                <div class="error-message">{{ form.name.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <div>
+            <label for="phone" class="form-label">Ваш номер</label>
+            <input type="tel" name="phone" id="phone" class="form-control" placeholder="+7 (999) 123-45-67" required>
+            {% if form.phone.errors %}
+                <div class="error-message">{{ form.phone.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <button type="submit" class="btn primary">Оставить заявку</button>
+    </form>
+    <div class="booking-text">Оставите заявку на бронирование!<br>
+        Или позвоните по номеру<br>
+        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+    </div>
+</div>
+
+
+{% endblock %}

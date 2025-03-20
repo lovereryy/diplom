@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block section %}
+<div class="wrapper">
+    {% block content %}
+    <div class="block-header">
+        Контакты
+    </div>
+
+    <div class="contact-info">
+        <p><strong>Адрес:</strong> Уютное кафе, ул. Гончарова, 21, Ульяновск</p>
+        <p><strong>Телефон: </strong><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+        <p><strong>Email:</strong> <a href="mailto:contact@uyutnoekafe.ru&subject=вопрос">contact@uyutnoekafe.ru</a></p>
+    </div>
+
+    <div class="block-header">
+        Наша локация
+    </div>
+
+    <div class="map-container">
+        <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4b3455bb0153e910f79cf98e33878d2cbc48a2323e11b66654f603c127a74577&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true">
+        </script>
+    </div>
+
+    {% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="block-header">
+    Ваши данные
+</div>
+<div class="profile-wrapper">
+    
+    <form method="post" class="login-form">
+        {% csrf_token %}
+
+        <div>
+            <label for="first_name">{{ form.first_name.label }}</label>
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+                <div class="error-message">{{ form.first_name.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <div>
+            <label for="id_username">{{ form.username.label }}</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error-message">{{ form.username.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+        <div>
+            <label for="id_email">{{ form.email.label }}</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="error-message">{{ form.email.errors.0 }}</div>
+            {% endif %}
+        </div>
+    
+    
+        <button type="submit" class="btn primary">Сохранить изменения</button>
+
+    </form>
+
+    <div class="profile-buttons">
+        <a href="{% url 'logout' %}" class="btn secondary" style="text-align: center;">Выйти</a>
+
+        <form method="post" action="{% url 'delete_account' %}" onsubmit="return confirm('Вы уверены, что хотите удалить аккаунт? Это действие необратимо.')">
+            {% csrf_token %}
+            <button type="submit" class="btn danger">Удалить аккаунт</button>
+        </form>
+    </div>
+
+</div>
+
+
+<hr>
+
+
+{% endblock %}

@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'main/css/styles.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>{% block title %}Кафе{% endblock %}</title>
+</head>
+<body>
+    {% block navbar %}
+    <nav class="navbar" id="navbar">
+        <div class="logo-wrapper">
+            <a href="{% url 'home' %}" class="logo">Уютное кафе</a>
+
+            <button class="hamburger hamburger--spring" type="button" onclick="toggleMenu()">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}" class="btn light">Главная</a>
+            <a href="{% url 'menu' %}" class="btn light">Меню</a>
+            <a href="{% url 'about' %}" class="btn light">О нас</a>
+            <a href="{% url 'contacts' %}" class="btn light">Контакты</a>
+        </div>
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="btn primary auth-btn">Личный кабинет</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn primary auth-btn">Войти</a>
+        {% endif %}
+
+        <div class="nav-links-mobile">
+            <a href="{% url 'home' %}" class="btn light">Главная</a>
+            <a href="{% url 'menu' %}" class="btn light">Меню</a>
+            <a href="{% url 'about' %}" class="btn light">О нас</a>
+            <a href="{% url 'contacts' %}" class="btn light">Контакты</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="btn primary">Личный кабинет</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn primary">Войти</a>
+            {% endif %}
+        </div>
+
+    </nav>
+    {% endblock %}
+    <div class="container">
+
+        {% block section %}
+        <div class="section">
+            <div id="content" class="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        {% endblock %}
+
+    </div>
+
+    <footer class="footer">
+        <a href="{% url 'home' %}" class="logo light" style="text-align: center;">Уютное кафе</a>
+        <div class="footer-links">
+            <a href="{% url 'home' %}">Главная</a>
+            <a href="{% url 'menu' %}">Меню</a>
+            <a href="{% url 'about' %}">О нас</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            let menu = document.querySelector(".nav-links-mobile");
+            let navbar = document.getElementById("navbar");
+            let burger = document.querySelector(".hamburger");
+
+            menu.classList.toggle("active");
+            burger.classList.toggle("is-active");
+
+            if (menu.classList.contains("active")) {
+                navbar.style.height = (navbar.scrollHeight + 16) + "px";
+            } else {
+                navbar.style.height = null;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let menu = document.querySelector(".nav-links-mobile");
+            let burger = document.querySelector(".hamburger");
+            let navbar = document.getElementById("navbar");
+
+            function updateNavbarOffset() {
+                return navbar.getBoundingClientRect().top + window.scrollY;
+            }
+
+            let navbarOffset = updateNavbarOffset();
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > navbarOffset) {
+                    navbar.classList.add("fixed"); // Добавляем класс, когда проскроллили
+                } else {
+                    navbar.classList.remove("fixed"); // Убираем класс, когда наверху
+                }
+            });
+
+            window.addEventListener("resize", function () {
+                navbarOffset = updateNavbarOffset(); // Пересчитываем, если изменился размер окна
+            });
+
+            function closeMenu() {
+                menu.classList.remove("active");
+                burger.classList.remove("is-active");
+                navbar.style.height = null;
+            }
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("click", function (event) {
+                let isClickInside = menu.contains(event.target) || burger.contains(event.target);
+                if (!isClickInside) {
+                    closeMenu();
+                }
+            });
+
+            function updateContentMargin() {
+                let navbar = document.getElementById("navbar");
+                let content = document.getElementById("content");
+
+                if (navbar && content) {
+                    let navbarHeightPx = navbar.offsetHeight; // Высота navbar в пикселях
+                    let remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize); // Узнаём, сколько пикселей в 1rem
+                    let totalMarginRem = navbarHeightPx / remInPx + 1; // Переводим navbarHeight в rem и прибавляем отступ
+
+                    content.style.marginTop = `${totalMarginRem}rem`;
+                }
+            }
+
+            // Устанавливаем отступ при загрузке страницы
+            updateContentMargin();
+
+            // Обновляем отступ при изменении размера окна
+            window.addEventListener("resize", updateContentMargin);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let phoneInput = document.getElementById("phone");
+    
+            // Применяем маску
+            let cleave = new Cleave(phoneInput, {
+                delimiters: [" ", "(", ") ", "-", "-"],
+                blocks: [2, 3, 3, 2, 2],
+                numericOnly: true,
+                prefix: "+7",
+                noImmediatePrefix: true
+            });
+    
+            // Перед отправкой формы очищаем форматирование
+            document.querySelector("form").addEventListener("submit", function () {
+                let rawPhone = phoneInput.value.replace(/\D/g, ""); // Убираем все нецифровые символы
+    
+                if (rawPhone.startsWith("89")) {
+                    rawPhone = "+7" + rawPhone.slice(1); // Заменяем 8 на +7
+                } else if (!rawPhone.startsWith("+7")) {
+                    rawPhone = "+7" + rawPhone.slice(1); // Принудительно добавляем +7
+                }
+    
+                phoneInput.value = rawPhone; // Подставляем в input очищенное значение
+            });
+        });
+    </script>
+    
+
+        
+</body>
+</html>

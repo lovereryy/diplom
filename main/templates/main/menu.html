@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<div class="block-header">
+    Наше меню
+</div>
+
+
+<div class="category-links">
+    {% for category in categories %}
+        <a href="#category-{{ category.id }}" class="category-links-element">{{ category.name }}</a>
+    {% endfor %}
+</div>
+
+<!-- Список категорий с товарами -->
+{% for category in categories %}
+    <div class="category-section" id="category-{{ category.id }}">
+        <div class="block-header" style="margin-bottom: 2rem;">
+            {{ category.name }}
+        </div>
+
+        <div class="product-list">
+            {% for product in category.products.all %}
+                <a href="{% url 'product_detail' product.id %}" class="product-card">
+                    <div class="product-card-img-wrapper">
+                        <img src="{{ product.image.url }}">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-card-name">{{ product.name }}</div>
+                        <div>{{ product.price|floatformat:"0" }} ₽</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

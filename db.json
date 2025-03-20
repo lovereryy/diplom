@@ -1,0 +1,2615 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2025-03-20T14:51:50.466Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "65",
+            "object_repr": "Айс кофе",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2025-03-20T14:55:40.654Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "65",
+            "object_repr": "Айс кофе",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2025-03-20T14:56:38.111Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "64",
+            "object_repr": "Смузи с бананом и клубникой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2025-03-20T14:57:12.404Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "63",
+            "object_repr": "Холодный чай с лимоном",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2025-03-20T14:57:52.677Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "62",
+            "object_repr": "Мохито безалкогольный",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2025-03-20T14:58:54.599Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "61",
+            "object_repr": "Лимонад цитрусовый",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2025-03-20T15:00:02.560Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "60",
+            "object_repr": "Травяной чай с ромашкой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2025-03-20T15:00:36.940Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "59",
+            "object_repr": "Зелёный чай с жасмином",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2025-03-20T15:01:11.246Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "58",
+            "object_repr": "Чёрный чай с бергамотом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2025-03-20T15:01:30.552Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "57",
+            "object_repr": "Какао с маршмеллоу",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2025-03-20T15:02:03.556Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "56",
+            "object_repr": "Горячий шоколад",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2025-03-20T15:02:34.688Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "55",
+            "object_repr": "Ягодный чай с чабрецом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2025-03-20T15:03:12.707Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "54",
+            "object_repr": "Чай с лавандой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2025-03-20T15:03:57.792Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "53",
+            "object_repr": "Лимонно-мятный чай",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2025-03-20T15:04:15.828Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "52",
+            "object_repr": "Облепиховый чай",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2025-03-20T15:04:46.096Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "51",
+            "object_repr": "Имбирно-медовый чай",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2025-03-20T15:05:32.928Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "50",
+            "object_repr": "Мокко низколактозное",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2025-03-20T15:05:53.898Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "49",
+            "object_repr": "Флэт уайт низколактозное",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2025-03-20T15:06:39.948Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "48",
+            "object_repr": "Латте низколактозное",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2025-03-20T15:07:31.022Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "47",
+            "object_repr": "Капучино низколактозное",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2025-03-20T15:08:21.054Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "46",
+            "object_repr": "Эспрессо макиато (низколактозное)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2025-03-20T15:10:13.458Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "45",
+            "object_repr": "Матча-латте на миндальном молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2025-03-20T15:10:48.737Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "44",
+            "object_repr": "Миндальный мокко",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2025-03-20T15:11:27.718Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "43",
+            "object_repr": "Раф на миндальном молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2025-03-20T15:11:51.000Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "42",
+            "object_repr": "Капучино на миндальном молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2025-03-20T15:12:18.928Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "41",
+            "object_repr": "Латте на миндальном молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2025-03-20T15:12:41.676Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "40",
+            "object_repr": "Кофе Гляссе с кокосовой стружкой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2025-03-20T15:13:17.626Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "39",
+            "object_repr": "Моккачино с кокосом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2025-03-20T15:13:49.806Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "38",
+            "object_repr": "Фраппе с кокосом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2025-03-20T15:14:19.033Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "37",
+            "object_repr": "Капучино на кокосовом молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2025-03-20T15:14:40.282Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "36",
+            "object_repr": "Латте на кокосовом молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2025-03-20T15:15:06.843Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "35",
+            "object_repr": "Кофе с кардамоном",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2025-03-20T15:15:54.891Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "34",
+            "object_repr": "Кофе с корицей",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2025-03-20T15:17:18.388Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "33",
+            "object_repr": "Кофе по-вьетнамски",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2025-03-20T15:18:05.145Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "32",
+            "object_repr": "Лавандовый латте",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2025-03-20T15:18:24.722Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "31",
+            "object_repr": "Раф кофе",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2025-03-20T15:19:21.963Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "30",
+            "object_repr": "Флэт Уайт",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2025-03-20T15:19:54.521Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "29",
+            "object_repr": "Латте",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2025-03-20T15:20:30.292Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "28",
+            "object_repr": "Капучино",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2025-03-20T15:20:51.691Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "27",
+            "object_repr": "Американо",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2025-03-20T15:21:14.609Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "26",
+            "object_repr": "Эспрессо",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2025-03-20T15:21:57.613Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "25",
+            "object_repr": "Фруктовый салат с мятой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2025-03-20T15:22:31.343Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "24",
+            "object_repr": "Шоколадный фондан",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2025-03-20T15:22:54.698Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "24",
+            "object_repr": "Шоколадный фондан",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2025-03-20T15:23:42.292Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "23",
+            "object_repr": "Эклеры с заварным кремом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 46,
+        "fields": {
+            "action_time": "2025-03-20T15:24:36.709Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "22",
+            "object_repr": "Чизкейк классический",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2025-03-20T15:25:05.940Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "21",
+            "object_repr": "Медовик",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2025-03-20T15:25:34.428Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "20",
+            "object_repr": "Каре ягнёнка с розмарином",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2025-03-20T15:26:06.663Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "20",
+            "object_repr": "Каре ягнёнка с розмарином",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2025-03-20T15:26:45.810Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "20",
+            "object_repr": "Каре ягнёнка с розмарином",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2025-03-20T15:27:13.102Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "19",
+            "object_repr": "Ризотто с грибами",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2025-03-20T15:27:43.219Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "18",
+            "object_repr": "Паста карбонара",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2025-03-20T15:28:37.867Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "17",
+            "object_repr": "Курица в сливочном соусе",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2025-03-20T15:29:09.341Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "16",
+            "object_repr": "Стейк из говядины",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2025-03-20T15:29:26.148Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "16",
+            "object_repr": "Стейк из говядины",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2025-03-20T15:33:22.829Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "15",
+            "object_repr": "Тосты с джемом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2025-03-20T15:33:46.028Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "14",
+            "object_repr": "Панкейки с шоколадом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 58,
+        "fields": {
+            "action_time": "2025-03-20T15:34:08.285Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "13",
+            "object_repr": "Сырники со сметаной",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 59,
+        "fields": {
+            "action_time": "2025-03-20T15:34:30.643Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "12",
+            "object_repr": "Каша овсяная с ягодами",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 60,
+        "fields": {
+            "action_time": "2025-03-20T15:35:10.442Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "11",
+            "object_repr": "Омлет с сыром и зеленью",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 61,
+        "fields": {
+            "action_time": "2025-03-20T15:37:58.877Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "10",
+            "object_repr": "Вегетарианский с авокадо",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 62,
+        "fields": {
+            "action_time": "2025-03-20T15:39:37.501Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "9",
+            "object_repr": "Клубный с курицей и беконом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 63,
+        "fields": {
+            "action_time": "2025-03-20T15:40:28.820Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Бутерброд с сыром и помидором",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 64,
+        "fields": {
+            "action_time": "2025-03-20T15:41:24.113Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "7",
+            "object_repr": "Бутерброд с красной рыбой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 65,
+        "fields": {
+            "action_time": "2025-03-20T15:42:20.553Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "6",
+            "object_repr": "Классический бутерброд с ветчиной",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 66,
+        "fields": {
+            "action_time": "2025-03-20T15:42:51.423Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "5",
+            "object_repr": "Освежающий ягодный морс",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 67,
+        "fields": {
+            "action_time": "2025-03-20T15:43:13.939Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "4",
+            "object_repr": "Зимняя уха с лососем",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 68,
+        "fields": {
+            "action_time": "2025-03-20T15:43:48.055Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "3",
+            "object_repr": "Летний холодный борщ",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 69,
+        "fields": {
+            "action_time": "2025-03-20T15:44:32.198Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "2",
+            "object_repr": "Весенний салат с молодыми овощами",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 70,
+        "fields": {
+            "action_time": "2025-03-20T15:44:56.591Z",
+            "user": 3,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "Осенний суп из тыквы",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 71,
+        "fields": {
+            "action_time": "2025-03-20T15:46:34.087Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "13",
+            "object_repr": "Прохладительные напитки",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 72,
+        "fields": {
+            "action_time": "2025-03-20T15:47:11.041Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "12",
+            "object_repr": "Какао, чай, напитки",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 73,
+        "fields": {
+            "action_time": "2025-03-20T15:47:40.400Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "11",
+            "object_repr": "Авторский чай",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 74,
+        "fields": {
+            "action_time": "2025-03-20T15:48:33.813Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Кофе и напитки на низколактозном молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 75,
+        "fields": {
+            "action_time": "2025-03-20T15:48:56.836Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "Кофе и напитки на миндальном молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 76,
+        "fields": {
+            "action_time": "2025-03-20T15:49:04.233Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "Кофе и напитки на кокосовом молоке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 77,
+        "fields": {
+            "action_time": "2025-03-20T15:50:08.057Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "Оригинальные кофейные напитки",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 78,
+        "fields": {
+            "action_time": "2025-03-20T15:51:19.877Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "Кофейные напитки",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 79,
+        "fields": {
+            "action_time": "2025-03-20T15:51:56.697Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Десерты",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 80,
+        "fields": {
+            "action_time": "2025-03-20T15:52:54.302Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Основное меню",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 81,
+        "fields": {
+            "action_time": "2025-03-20T15:54:32.789Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Завтрак",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 82,
+        "fields": {
+            "action_time": "2025-03-20T15:55:21.020Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Бутерброды",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 83,
+        "fields": {
+            "action_time": "2025-03-20T15:56:18.192Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Сезонное меню",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 84,
+        "fields": {
+            "action_time": "2025-03-20T15:56:33.377Z",
+            "user": 3,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Сезонное меню",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 85,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "9",
+            "object_repr": "Бронь на имя 64, номер телефона - +76556556566",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 86,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "8",
+            "object_repr": "Бронь на имя 5655, номер телефона - +79041818381",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 87,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "7",
+            "object_repr": "Бронь на имя eter, номер телефона - erter",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 88,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "Бронь на имя Продукт 1, номер телефона - 1234567890",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 89,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "Бронь на имя ytty, номер телефона - +76623424323",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 90,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "Бронь на имя 123, номер телефона - 1234567890",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 91,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "Бронь на имя Леха, номер телефона - +79062563489",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 92,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Бронь на имя Коля, номер телефона - +76623424323",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 93,
+        "fields": {
+            "action_time": "2025-03-20T18:44:31.913Z",
+            "user": 3,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Бронь на имя Юра, номер телефона - +76623424323",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 94,
+        "fields": {
+            "action_time": "2025-03-20T18:45:18.402Z",
+            "user": 3,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "SpecialOffers object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 95,
+        "fields": {
+            "action_time": "2025-03-20T18:45:31.528Z",
+            "user": 3,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "SpecialOffers object (2)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add category",
+            "content_type": 7,
+            "codename": "add_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change category",
+            "content_type": 7,
+            "codename": "change_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete category",
+            "content_type": 7,
+            "codename": "delete_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view category",
+            "content_type": 7,
+            "codename": "view_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add special offers",
+            "content_type": 8,
+            "codename": "add_specialoffers"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change special offers",
+            "content_type": 8,
+            "codename": "change_specialoffers"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete special offers",
+            "content_type": 8,
+            "codename": "delete_specialoffers"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view special offers",
+            "content_type": 8,
+            "codename": "view_specialoffers"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add table booking",
+            "content_type": 9,
+            "codename": "add_tablebooking"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change table booking",
+            "content_type": 9,
+            "codename": "change_tablebooking"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete table booking",
+            "content_type": 9,
+            "codename": "delete_tablebooking"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view table booking",
+            "content_type": 9,
+            "codename": "view_tablebooking"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add product",
+            "content_type": 10,
+            "codename": "add_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change product",
+            "content_type": 10,
+            "codename": "change_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete product",
+            "content_type": 10,
+            "codename": "delete_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view product",
+            "content_type": 10,
+            "codename": "view_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add review",
+            "content_type": 11,
+            "codename": "add_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change review",
+            "content_type": 11,
+            "codename": "change_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete review",
+            "content_type": 11,
+            "codename": "delete_review"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view review",
+            "content_type": 11,
+            "codename": "view_review"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$HmtwS4BBWGswBpzhCJPYAt$WltENvx7eFr12QLtjl3cijeulYDprvxImID+809GiVQ=",
+            "last_login": "2025-03-20T12:30:41.058Z",
+            "is_superuser": false,
+            "username": "ashleyrose",
+            "first_name": "Вася",
+            "last_name": "",
+            "email": "zefyepetro@vusra.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-03-20T12:29:48.088Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$n6pztXZz4s7sOzUlOwkKpO$wdIZ5pisuGmQVAUGbr6H38DpIHKqf4n/4AQbgdutv08=",
+            "last_login": "2025-03-20T14:51:40.722Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-03-20T12:35:45.353Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "main",
+            "model": "category"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "main",
+            "model": "specialoffers"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "main",
+            "model": "tablebooking"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "main",
+            "model": "product"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "main",
+            "model": "review"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ouckdm5bz0vh55jl98mqjd8oc2nzou96",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGll2_ImWkp4zWLvrDQ4gW4qTCnF3iJQC2jcz76USbmtJW5clzVmdlVOn342QH1J3kO9Yb01zq-syk94VfdCury3L83K4fwcFe_nWo5lgosGzCcFHh8w2e8sUKFp0Y6ZIjBABRICjNyg0YDAZgcBRCOr9AfVVOIc:1tvHFE:iXJlA9cQ7puEvCNSk_oySBQgqsuesxcaP70rDMO1vGo",
+            "expire_date": "2025-04-03T14:51:40.725Z"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 1,
+        "fields": {
+            "name": "Сезонное меню",
+            "description": "Сезонные блюда, адаптированные под время года",
+            "image": "categories/Салат-с-карамелизированным-инжиром_сливой_и_козьим_сыром-1.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 2,
+        "fields": {
+            "name": "Бутерброды",
+            "description": "Разнообразные бутерброды и сэндвичи",
+            "image": "categories/buterbrod_5327.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 3,
+        "fields": {
+            "name": "Завтрак",
+            "description": "Блюда и напитки для идеального старта дня",
+            "image": "categories/c422768712d8add6b000e6be24e37772.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 4,
+        "fields": {
+            "name": "Основное меню",
+            "description": "Горячие блюда, мясо, рыба, паста",
+            "image": "categories/q50TjGD0skM.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 5,
+        "fields": {
+            "name": "Десерты",
+            "description": "Сладкие угощения для любого настроения",
+            "image": "categories/49497cc636474639cf6fac7727b0096d.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 6,
+        "fields": {
+            "name": "Кофейные напитки",
+            "description": "Классика на основе эспрессо и молока",
+            "image": "categories/dd8f7ac5-900c-5da0-a0e6-0c6b264ad571.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 7,
+        "fields": {
+            "name": "Оригинальные кофейные напитки",
+            "description": "Необычные вкусы и сочетания в кофейных напитках",
+            "image": "categories/i_20.webp"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 8,
+        "fields": {
+            "name": "Кофе и напитки на кокосовом молоке",
+            "description": "Для любителей растительного молока — кокос",
+            "image": "categories/koktejl_kokos_stakan_113720_3840x2400.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 9,
+        "fields": {
+            "name": "Кофе и напитки на миндальном молоке",
+            "description": "Альтернативные напитки на миндальном молоке",
+            "image": "categories/20981364cd1001e8aa88cd7a11c76c74.jpeg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 10,
+        "fields": {
+            "name": "Кофе и напитки на низколактозном молоке",
+            "description": "Меню для тех, кто ограничивает лактозу",
+            "image": "categories/og_og_1686053937275976322.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 11,
+        "fields": {
+            "name": "Авторский чай",
+            "description": "Оригинальные рецепты чая с добавками и специями",
+            "image": "categories/KFv0mgAajVA.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 12,
+        "fields": {
+            "name": "Какао, чай, напитки",
+            "description": "Разнообразие напитков помимо кофе",
+            "image": "categories/podpiska-napitki-minsk-skidka-cookersribzo1.jpg"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 13,
+        "fields": {
+            "name": "Прохладительные напитки",
+            "description": "Освежающие напитки на любой вкус",
+            "image": "categories/scale_1200_4.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 1,
+        "fields": {
+            "name": "Осенний суп из тыквы",
+            "category": 1,
+            "description": "Сливочный суп с тыквой и ароматными специями",
+            "price": "300.00",
+            "image": "products/2a3369eb33794a05a0b09f68ee6760ed.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 2,
+        "fields": {
+            "name": "Весенний салат с молодыми овощами",
+            "category": 1,
+            "description": "Лёгкий салат с хрустящими овощами и зеленью",
+            "price": "250.00",
+            "image": "products/maxresdefault_1.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 3,
+        "fields": {
+            "name": "Летний холодный борщ",
+            "category": 1,
+            "description": "Охлаждённый свекольный суп с огурцом и зеленью",
+            "price": "270.00",
+            "image": "products/kholodnyy-borshch-so-svekloy.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 4,
+        "fields": {
+            "name": "Зимняя уха с лососем",
+            "category": 1,
+            "description": "Наваристая уха из лосося со свежей зеленью",
+            "price": "350.00",
+            "image": "products/2c92ee2b7db82a303e7a077f786b5554.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 5,
+        "fields": {
+            "name": "Освежающий ягодный морс",
+            "category": 1,
+            "description": "Напиток из лесных ягод и мяты",
+            "price": "150.00",
+            "image": "products/356202db2acac8fdd1de6775fd4218a9.jpeg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 6,
+        "fields": {
+            "name": "Классический бутерброд с ветчиной",
+            "category": 2,
+            "description": "Хлеб, ветчина, сыр, салат и соус",
+            "price": "180.00",
+            "image": "products/1440x1082.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 7,
+        "fields": {
+            "name": "Бутерброд с красной рыбой",
+            "category": 2,
+            "description": "Слабосолёная рыба, сливочный сыр и свежий огурец",
+            "price": "220.00",
+            "image": "products/post_5c0b94c3e04cb.jpeg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 8,
+        "fields": {
+            "name": "Бутерброд с сыром и помидором",
+            "category": 2,
+            "description": "Тост, плавленый сыр, сочные томаты и зелень",
+            "price": "160.00",
+            "image": "products/oshomenu20.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 9,
+        "fields": {
+            "name": "Клубный с курицей и беконом",
+            "category": 2,
+            "description": "Трёхслойный сэндвич с куриным филе, беконом и соусом",
+            "price": "260.00",
+            "image": "products/DSC04219-1200x822.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 10,
+        "fields": {
+            "name": "Вегетарианский с авокадо",
+            "category": 2,
+            "description": "Авокадо, помидоры, салат, оливковое масло",
+            "price": "230.00",
+            "image": "products/770336411656b212601249e4e922d8cf.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 11,
+        "fields": {
+            "name": "Омлет с сыром и зеленью",
+            "category": 3,
+            "description": "Классический омлет из яиц с добавлением сыра",
+            "price": "190.00",
+            "image": "products/muF8PkusEm4.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 12,
+        "fields": {
+            "name": "Каша овсяная с ягодами",
+            "category": 3,
+            "description": "Овсяные хлопья на молоке с ягодами и мёдом",
+            "price": "150.00",
+            "image": "products/scale_1200_3.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 13,
+        "fields": {
+            "name": "Сырники со сметаной",
+            "category": 3,
+            "description": "Нежные сырники из творога со сметаной",
+            "price": "210.00",
+            "image": "products/8900f46ec1d0e44553c62707fbc33ffd.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 14,
+        "fields": {
+            "name": "Панкейки с шоколадом",
+            "category": 3,
+            "description": "Американские блинчики с шоколадным соусом",
+            "price": "220.00",
+            "image": "products/2c8ab4f1330e58b1824b044483f3a6e6.png"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 15,
+        "fields": {
+            "name": "Тосты с джемом",
+            "category": 3,
+            "description": "Поджаренные тосты с ягодным джемом",
+            "price": "120.00",
+            "image": "products/wksuxc2s-r.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 16,
+        "fields": {
+            "name": "Стейк из говядины",
+            "category": 4,
+            "description": "Сочное говяжье филе, прожарка на выбор",
+            "price": "590.00",
+            "image": "products/opera-snimok_2019-02-12_110445_grottbar.ru_-800x494.png"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 17,
+        "fields": {
+            "name": "Курица в сливочном соусе",
+            "category": 4,
+            "description": "Куриное филе, запечённое в ароматном соусе",
+            "price": "320.00",
+            "image": "products/51039004.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 18,
+        "fields": {
+            "name": "Паста карбонара",
+            "category": 4,
+            "description": "Спагетти с беконом, яйцом и сыром пармезан",
+            "price": "350.00",
+            "image": "products/4RNh6BWN388.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 19,
+        "fields": {
+            "name": "Ризотто с грибами",
+            "category": 4,
+            "description": "Итальянский рис с белыми грибами и пармезаном",
+            "price": "360.00",
+            "image": "products/7174d10723f9d557fe4bc124e8730a89.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 20,
+        "fields": {
+            "name": "Каре ягнёнка с розмарином",
+            "category": 4,
+            "description": "Нежное мясо ягнёнка, запечённое с травами",
+            "price": "720.00",
+            "image": "products/preview_preview_image-4FWzn2X7WgbYlKAmNJla979ZlFWcII-btQ.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 21,
+        "fields": {
+            "name": "Медовик",
+            "category": 5,
+            "description": "Слоёный торт с ароматным мёдом",
+            "price": "250.00",
+            "image": "products/DSCF4799.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 22,
+        "fields": {
+            "name": "Чизкейк классический",
+            "category": 5,
+            "description": "Нежный чизкейк с сыром крем-чиз",
+            "price": "300.00",
+            "image": "products/delicious-cheesecake-e1561289522668.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 23,
+        "fields": {
+            "name": "Эклеры с заварным кремом",
+            "category": 5,
+            "description": "Французская выпечка с нежной начинкой",
+            "price": "200.00",
+            "image": "products/scale_1200_2.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 24,
+        "fields": {
+            "name": "Шоколадный фондан",
+            "category": 5,
+            "description": "Десерт с тёплой текучей серединой",
+            "price": "280.00",
+            "image": "products/4910a657-e2b3-4c79-9253-4da5a70c4423.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 25,
+        "fields": {
+            "name": "Фруктовый салат с мятой",
+            "category": 5,
+            "description": "Свежие фрукты, заправленные лёгким сиропом",
+            "price": "230.00",
+            "image": "products/1.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 26,
+        "fields": {
+            "name": "Эспрессо",
+            "category": 6,
+            "description": "Классический крепкий кофе",
+            "price": "100.00",
+            "image": "products/i_17.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 27,
+        "fields": {
+            "name": "Американо",
+            "category": 6,
+            "description": "Кофе на основе эспрессо, разбавленный водой",
+            "price": "110.00",
+            "image": "products/XXXL_1.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 28,
+        "fields": {
+            "name": "Капучино",
+            "category": 6,
+            "description": "Эспрессо, молоко и воздушная молочная пена",
+            "price": "150.00",
+            "image": "products/XXXL.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 29,
+        "fields": {
+            "name": "Латте",
+            "category": 6,
+            "description": "Больше молока, мягкий вкус",
+            "price": "160.00",
+            "image": "products/scale_1200_1.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 30,
+        "fields": {
+            "name": "Флэт Уайт",
+            "category": 6,
+            "description": "Двойной эспрессо и микропена молока",
+            "price": "170.00",
+            "image": "products/Hs1mqVcCbyEfe1U6x-smz6Fl0xHq513QOh3Shb2oh6y6Imn0cAZZs_mVPFqf4g9D07bt0HHtGD6_RSE_yH8xVle.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 31,
+        "fields": {
+            "name": "Раф кофе",
+            "category": 7,
+            "description": "Сливки, эспрессо и ванильный сахар — всё взбито вместе",
+            "price": "190.00",
+            "image": "products/i_16.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 32,
+        "fields": {
+            "name": "Лавандовый латте",
+            "category": 7,
+            "description": "Нежный кофейный напиток с лавандовым сиропом",
+            "price": "200.00",
+            "image": "products/orig.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 33,
+        "fields": {
+            "name": "Кофе по-вьетнамски",
+            "category": 7,
+            "description": "Эспрессо через сгущённое молоко",
+            "price": "180.00",
+            "image": "products/1d873f1ecd999ba01137d4af7509f28f.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 34,
+        "fields": {
+            "name": "Кофе с корицей",
+            "category": 7,
+            "description": "Ароматный напиток с добавлением молотой корицы",
+            "price": "150.00",
+            "image": "products/360_F_468252682_b3VBafM0JP1R3rnPgWuHmfsjFVpgCgtL.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 35,
+        "fields": {
+            "name": "Кофе с кардамоном",
+            "category": 7,
+            "description": "Пряный вкус и тонкий аромат кардамона",
+            "price": "160.00",
+            "image": "products/i_15.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 36,
+        "fields": {
+            "name": "Латте на кокосовом молоке",
+            "category": 8,
+            "description": "Мягкий кремовый вкус с лёгким ароматом кокоса",
+            "price": "180.00",
+            "image": "products/30258560082851265_cf23.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 37,
+        "fields": {
+            "name": "Капучино на кокосовом молоке",
+            "category": 8,
+            "description": "Пенка из кокосового молока и эспрессо",
+            "price": "190.00",
+            "image": "products/photo_2024-11-25_230.jpeg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 38,
+        "fields": {
+            "name": "Фраппе с кокосом",
+            "category": 8,
+            "description": "Холодный кофе с кокосовой ноткой и льдом",
+            "price": "200.00",
+            "image": "products/maxresdefault.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 39,
+        "fields": {
+            "name": "Моккачино с кокосом",
+            "category": 8,
+            "description": "Шоколад, кофе и кокосовое молоко",
+            "price": "210.00",
+            "image": "products/i_14.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 40,
+        "fields": {
+            "name": "Кофе Гляссе с кокосовой стружкой",
+            "category": 8,
+            "description": "Кофе со сливочным мороженым и кокосовой стружкой",
+            "price": "220.00",
+            "image": "products/360_F_130411453_KjlGLrgSg0lpVZl2wEE5rR8BdcmnJjOT.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 41,
+        "fields": {
+            "name": "Латте на миндальном молоке",
+            "category": 9,
+            "description": "Альтернативная версия латте с ореховым послевкусием",
+            "price": "180.00",
+            "image": "products/i_13.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 42,
+        "fields": {
+            "name": "Капучино на миндальном молоке",
+            "category": 9,
+            "description": "Пенка на миндальном молоке, деликатный вкус",
+            "price": "190.00",
+            "image": "products/i_12.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 43,
+        "fields": {
+            "name": "Раф на миндальном молоке",
+            "category": 9,
+            "description": "Взбитые сливки (растительные), эспрессо, сироп",
+            "price": "210.00",
+            "image": "products/i_11.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 44,
+        "fields": {
+            "name": "Миндальный мокко",
+            "category": 9,
+            "description": "Шоколад, кофе и миндальное молоко",
+            "price": "220.00",
+            "image": "products/98xPy6T2QR8.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 45,
+        "fields": {
+            "name": "Матча-латте на миндальном молоке",
+            "category": 9,
+            "description": "Зелёный чай матча с мягким ореховым вкусом",
+            "price": "240.00",
+            "image": "products/i_10.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 46,
+        "fields": {
+            "name": "Эспрессо макиато (низколактозное)",
+            "category": 10,
+            "description": "Классический макиато с безопасным для ЖКТ молоком",
+            "price": "160.00",
+            "image": "products/i_9.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 47,
+        "fields": {
+            "name": "Капучино низколактозное",
+            "category": 10,
+            "description": "Воздушная пенка с пониженным содержанием лактозы",
+            "price": "170.00",
+            "image": "products/XXL_height.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 48,
+        "fields": {
+            "name": "Латте низколактозное",
+            "category": 10,
+            "description": "Мягкий вкус при минимуме лактозы",
+            "price": "180.00",
+            "image": "products/Кофе_Латте.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 49,
+        "fields": {
+            "name": "Флэт уайт низколактозное",
+            "category": 10,
+            "description": "Двойной эспрессо с низколактозным молоком",
+            "price": "190.00",
+            "image": "products/i_8.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 50,
+        "fields": {
+            "name": "Мокко низколактозное",
+            "category": 10,
+            "description": "Шоколадный кофе, забота о здоровье",
+            "price": "200.00",
+            "image": "products/i_7.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 51,
+        "fields": {
+            "name": "Имбирно-медовый чай",
+            "category": 11,
+            "description": "Ароматный горячий напиток с имбирём и мёдом",
+            "price": "140.00",
+            "image": "products/e2cabcba4157fcb487781fd2411219f4.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 52,
+        "fields": {
+            "name": "Облепиховый чай",
+            "category": 11,
+            "description": "Яркий, витаминный напиток с облепихой",
+            "price": "150.00",
+            "image": "products/i_6.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 53,
+        "fields": {
+            "name": "Лимонно-мятный чай",
+            "category": 11,
+            "description": "Освежающий чай с лимоном и мятой",
+            "price": "130.00",
+            "image": "products/i_5.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 54,
+        "fields": {
+            "name": "Чай с лавандой",
+            "category": 11,
+            "description": "Нежный цветочный аромат и мягкий вкус",
+            "price": "160.00",
+            "image": "products/Screenshot_2023-07-14_at_19-27-39_Обои_на_телефон_Еда_Натюрморт_Чашка_Чай_Чайни_Q5DDpFu.png"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 55,
+        "fields": {
+            "name": "Ягодный чай с чабрецом",
+            "category": 11,
+            "description": "Смесь ягод и трав, согревающий эффект",
+            "price": "170.00",
+            "image": "products/i_4.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 56,
+        "fields": {
+            "name": "Горячий шоколад",
+            "category": 12,
+            "description": "Насыщенный напиток из топлёного шоколада",
+            "price": "180.00",
+            "image": "products/scale_1200.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 57,
+        "fields": {
+            "name": "Какао с маршмеллоу",
+            "category": 12,
+            "description": "Сливочный какао с порцией зефирок",
+            "price": "170.00",
+            "image": "products/6663037164.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 58,
+        "fields": {
+            "name": "Чёрный чай с бергамотом",
+            "category": 12,
+            "description": "Классический аромат Эрл Грей",
+            "price": "120.00",
+            "image": "products/i_3_KNj4NlJ.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 59,
+        "fields": {
+            "name": "Зелёный чай с жасмином",
+            "category": 12,
+            "description": "Мягкий вкус зелёного чая, тонкий аромат жасмина",
+            "price": "140.00",
+            "image": "products/i_2_RioXAHp.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 60,
+        "fields": {
+            "name": "Травяной чай с ромашкой",
+            "category": 12,
+            "description": "Лёгкий расслабляющий напиток на травах",
+            "price": "130.00",
+            "image": "products/61c45c3214c22.jpg"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 61,
+        "fields": {
+            "name": "Лимонад цитрусовый",
+            "category": 13,
+            "description": "Кисло-сладкий напиток на основе лимона и апельсина",
+            "price": "120.00",
+            "image": "products/i_1_yfPz7wb.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 62,
+        "fields": {
+            "name": "Мохито безалкогольный",
+            "category": 13,
+            "description": "Освежающий микс лайма, мяты и льда",
+            "price": "130.00",
+            "image": "products/i.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 63,
+        "fields": {
+            "name": "Холодный чай с лимоном",
+            "category": 13,
+            "description": "Чай со льдом и дольками лимона",
+            "price": "110.00",
+            "image": "products/image6.png"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 64,
+        "fields": {
+            "name": "Смузи с бананом и клубникой",
+            "category": 13,
+            "description": "Фруктовый напиток на основе свежих ягод и йогурта",
+            "price": "170.00",
+            "image": "products/i_3.webp"
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 65,
+        "fields": {
+            "name": "Айс кофе",
+            "category": 13,
+            "description": "Кофе со льдом и молоком, идеально в жару",
+            "price": "160.00",
+            "image": "products/i_2.webp"
+        }
+    },
+    {
+        "model": "main.specialoffers",
+        "pk": 1,
+        "fields": {
+            "date_starting": "2025-03-20T18:44:51Z",
+            "date_ending": "2026-02-01T18:44:53Z",
+            "image": "specials/101720697525.11720697525.webp"
+        }
+    },
+    {
+        "model": "main.specialoffers",
+        "pk": 2,
+        "fields": {
+            "date_starting": "2025-03-20T18:45:19Z",
+            "date_ending": "2026-02-01T18:45:20Z",
+            "image": "specials/slaiderburgerysait1712520112.webp"
+        }
+    }
+]
