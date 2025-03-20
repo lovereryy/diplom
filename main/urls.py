@@ -2,6 +2,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
+from .views import custom_404
 
 urlpatterns = [
     path("", views.home, name="home"),  # Главная страница
@@ -14,6 +15,9 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('about/', views.about, name='about'),
     path('menu/', views.menu, name='menu'),
+    path('thanks/', views.thanks, name='thanks'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = custom_404

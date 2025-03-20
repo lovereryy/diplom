@@ -163,6 +163,37 @@
         },
         });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let phoneInput = document.getElementById("phone");
+    
+            // Применяем маску
+            let cleave = new Cleave(phoneInput, {
+                delimiters: [" ", "(", ") ", "-", "-"],
+                blocks: [2, 3, 3, 2, 2],
+                numericOnly: true,
+                prefix: "+7",
+                noImmediatePrefix: true
+            });
+    
+            // Перед отправкой формы очищаем форматирование
+            document.querySelector("form").addEventListener("submit", function () {
+                let rawPhone = phoneInput.value.replace(/\D/g, ""); // Убираем все нецифровые символы
+    
+                if (rawPhone.startsWith("89")) {
+                    rawPhone = "+7" + rawPhone.slice(1); // Заменяем 8 на +7
+                } else if (!rawPhone.startsWith("+7")) {
+                    rawPhone = "+7" + rawPhone.slice(1); // Принудительно добавляем +7
+                }
+    
+                phoneInput.value = rawPhone; // Подставляем в input очищенное значение
+            });
+        });
+    </script>
+    
+
         
 </body>
 </html>

@@ -52,10 +52,12 @@ class Review(models.Model):
 class TableBooking(models.Model):
     name = models.CharField(max_length=255, blank=True, verbose_name="Имя")
     phone = models.CharField(max_length=15, blank=True, verbose_name="Телефон")
+    timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Дата заявки")
 
     def __str__(self):
         return f"Бронь на имя {self.name}, номер телефона - {self.phone}"
-    
+
+
 def special_offer_image_path(instance, filename):
     """
     Формирует путь для загрузки изображения с датой начала акции.

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Review
+from .models import Review, TableBooking
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -77,3 +77,7 @@ class CustomUserCreationForm(UserCreationForm):
         return email
 
 
+class TableBookingForm(forms.ModelForm):
+    class Meta:
+        model = TableBooking
+        fields = ['name', 'phone']

@@ -7,13 +7,43 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 import logging
 from django.contrib.auth import get_backends
+from django.conf import settings
+
+from telegram import Bot
+import asyncio
 
 from .models import Product, Category, Review, SpecialOffers
-from .forms import ReviewForm, CustomUserChangeForm, CustomAuthenticationForm, CustomUserCreationForm
+from .forms import ReviewForm, CustomUserChangeForm, CustomAuthenticationForm, CustomUserCreationForm, TableBookingForm
 
 logger = logging.getLogger(__name__)
+bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
 
 def home(request):
+
+    if request.method == "POST":
+        form = TableBookingForm(request.POST)
+        if form.is_valid():
+            table_booking = form.save()
+            
+            # Отправка сообщения в Telegram
+            chat_id = settings.TELEGRAM_CHAT_ID
+        
+
+            message_text = (
+                f"Новая заявка!\n\n"
+                f"Имя: {table_booking.name}\n"
+                f"Телефон: {table_booking.phone}\n"
+            )
+            
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(bot.send_message(chat_id, message_text))
+                     
+            return redirect('thanks')
+    else:
+        form = TableBookingForm()
+
+
     try:
         categories = Category.objects.all()
         products = Product.objects.all()
@@ -26,6 +56,7 @@ def home(request):
             "categories": categories,
             "products": products,
             "specials": specials,
+            "form": form,
         })
     except OperationalError as e:
         logger.error(f"Ошибка базы данных: {e}")
@@ -179,6 +210,9 @@ def about(request):
 def contacts(request):
     return render(request, "main/contacts.html")
 
+def thanks(request):
+    return render(request, "main/thanks.html")
+
 def menu(request):
     try:
         categories = Category.objects.prefetch_related('products').all()
@@ -190,3 +224,7 @@ def menu(request):
         logger.error(f"Ошибка базы данных: {e}")
         messages.error(request, "Ошибка загрузки данных. Попробуйте позже.")
         return redirect("home")
+    
+
+def custom_404(request, exception):
+    return render(request, "404.html", status=404)
