@@ -16,6 +16,10 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('menu/', views.menu, name='menu'),
     path('thanks/', views.thanks, name='thanks'),
+
+    # path('api/booked-dates/', views.get_fully_booked_dates, name='booked_dates'),
+    path('api/free-tables/', views.get_free_tables, name='free_tables'),
+    path("api/availability/", views.get_availability, name="availability"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -16,7 +16,6 @@
     <div class="swiper-wrapper">
         {% for special in specials %}
             <div class="swiper-slide">
-                <!-- Выводим изображение акции -->
                 {% if special.image %}
                     <img src="{{ special.image.url }}" alt="Акция" />
                 {% else %}
@@ -44,38 +43,369 @@
 </div>
 
 <div class="booking-wrapper">
-    <form method="post" class="booking-form">
-        {% csrf_token %}
+    {% if user.is_authenticated %}
+        <form method="post" class="booking-form" id="bookingForm" style="flex: 3;">
+            {% csrf_token %}
 
-        {% if form.non_field_errors %}
-            <div class="error-message">
-                {{ form.non_field_errors.0 }}
+            {% if form.non_field_errors %}
+                <div class="error-message">{{ form.non_field_errors.0 }}</div>
+            {% endif %}
+            
+            <div>
+                <label for="id_booking_type" class="form-label">Тип бронирования</label>
+                {{ form.booking_type }}
             </div>
-        {% endif %}
-    
-        <div>
-            <label for="name" class="form-label">Ваше имя</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="Ваше имя" required>
-            {% if form.name.errors %}
-                <div class="error-message">{{ form.name.errors.0 }}</div>
-            {% endif %}
+            
+            <div>
+                <label for="id_guests_count" class="form-label">Количество гостей</label>
+                {{ form.guests_count }}
+            </div>
+            
+            <div>
+                <label for="id_date" class="form-label">Дата</label>
+                {{ form.date }}
+            </div>
+            
+            <div>
+                <label for="id_time" class="form-label">Время начала</label>
+                {{ form.time }}
+            </div>
+            
+            <div>
+                <label for="id_table" class="form-label">Столик</label>
+                <select id="id_table" name="table" disabled>
+                    <option value="" selected>Выберите время</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="phone" class="form-label">Телефон</label>
+                {{ form.phone }}
+            </div>
+
+            <div id="endTimeDisplay" style="margin-top: 1rem; font-weight: bold;"></div>
+            <input type="hidden" name="end_time" id="end_time_input">
+
+            <button type="submit" class="btn primary">Забронировать</button>
+        </form>
+    {% else %}
+        <div class="booking-text">
+            <div>Для бронирования столика нужно войти на сайт!</div>
+            <a href="{% url 'login' %}" class="btn primary">Войти</a>
         </div>
-    
-        <div>
-            <label for="phone" class="form-label">Ваш номер</label>
-            <input type="tel" name="phone" id="phone" class="form-control" placeholder="+7 (999) 123-45-67" required>
-            {% if form.phone.errors %}
-                <div class="error-message">{{ form.phone.errors.0 }}</div>
-            {% endif %}
-        </div>
-    
-        <button type="submit" class="btn primary">Оставить заявку</button>
-    </form>
-    <div class="booking-text">Оставите заявку на бронирование!<br>
+    {% endif %}
+
+    <div class="booking-text"  style="flex: 2;">Оставьте заявку на бронирование!<br>
         Или позвоните по номеру<br>
         <a href="tel:+79991234567">+7 (999) 123-45-67</a>
     </div>
 </div>
 
+<!-- Передаем все столики в JS -->
+<script>
+    const allTables = [
+        {% for table in tables %}
+            {id: {{ table.id }}, number: {{ table.number }} },
+        {% endfor %}
+    ];
+</script>
+
+<!-- Flatpickr + JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const typeInput = document.getElementById("id_booking_type");
+    const guestsInput = document.getElementById("id_guests_count");
+    const dateInput = document.getElementById("id_date");
+    const timeSelect = document.getElementById("id_time");
+    const tableSelect = document.getElementById("id_table");
+    const endTimeDisplay = document.getElementById("endTimeDisplay");
+    const endTimeInput = document.getElementById("end_time_input");
+
+    const durations = {
+        'DINNER': 90,
+        'BANQUET': 300,
+        'JUBILEE': 300
+    };
+
+    const guestsLimits = {
+        "DINNER": 4,
+        "BANQUET": 8,
+        "JUBILEE": 8,
+    };
+
+    let calendar = null;
+
+    function toMinutes(timeStr) {
+        const [h, m] = timeStr.split(":").map(Number);
+        return h * 60 + m;
+    }
+
+    function isTimeBlocked(timeMinutes, duration, blockedIntervals) {
+        for (const interval of blockedIntervals) {
+            const start = toMinutes(interval.start);
+            const end = toMinutes(interval.end);
+            if (!(timeMinutes + duration <= start || timeMinutes >= end)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function generateTimeOptions(blockedIntervals, duration) {
+        timeSelect.innerHTML = "";
+        const step = 15;
+        let hasFree = false;
+    
+        for (let t = 540; t + duration <= 1380; t += step) { // 9:00 - 23:00
+            const disabled = isTimeBlocked(t, duration, blockedIntervals);
+            if (!disabled) {
+                const h = String(Math.floor(t / 60)).padStart(2, "0");
+                const m = String(t % 60).padStart(2, "0");
+                const timeStr = `${h}:${m}`;
+    
+                const option = document.createElement("option");
+                option.value = timeStr;
+                option.textContent = timeStr;
+                timeSelect.appendChild(option);
+                hasFree = true;
+            }
+        }
+    
+        if (!hasFree) {
+            timeSelect.innerHTML = "";
+            const option = document.createElement("option");
+            option.textContent = "Нет свободного времени";
+            option.disabled = true;
+            option.selected = true;
+            timeSelect.appendChild(option);
+            timeSelect.disabled = true;
+        } else {
+            timeSelect.disabled = false;
+            timeSelect.value = timeSelect.options[0].value; // выбираем первый доступный
+            timeSelect.dispatchEvent(new Event('change')); // триггерим событие для загрузки столиков
+        }
+    }
+    
+    
+
+    async function loadAvailability() {
+        const date = dateInput.value;
+        const type = typeInput.value;
+        if (!date || !type) {
+            timeSelect.innerHTML = `<option>Сначала выберите дату и тип бронирования</option>`;
+            timeSelect.disabled = true;
+            return;
+        }
+        try {
+            const response = await fetch(`/api/availability/?date=${date}&type=${type}`);
+            const data = await response.json();
+            if (data.blocked_intervals) {
+                generateTimeOptions(data.blocked_intervals, durations[type]);
+            } else {
+                timeSelect.innerHTML = `<option>Нет данных по доступности</option>`;
+                timeSelect.disabled = true;
+            }
+        } catch (error) {
+            console.error("Ошибка при загрузке доступности:", error);
+            timeSelect.innerHTML = `<option>Ошибка загрузки</option>`;
+            timeSelect.disabled = true;
+        }
+    }
+
+    function updateEndTime() {
+        const type = typeInput.value;
+        const startTime = timeSelect.value;
+        if (!startTime || !durations[type]) {
+            endTimeDisplay.textContent = "";
+            endTimeInput.value = "";
+            return;
+        }
+        const [h, m] = startTime.split(":").map(Number);
+        const start = new Date();
+        start.setHours(h, m, 0, 0);
+        const end = new Date(start.getTime() + durations[type] * 60000);
+        const formatted = end.toTimeString().substring(0, 5);
+        endTimeDisplay.textContent = `Бронирование закончится в: ${formatted}`;
+        endTimeInput.value = formatted;
+    }
+
+    function updateGuestsOptions(maxGuests) {
+        guestsInput.innerHTML = ""; // очистить
+
+        for (let i = 1; i <= maxGuests; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            guestsInput.appendChild(option);
+        }
+        guestsInput.value = maxGuests; // выбираем максимальное по умолчанию
+    }
+
+    // Изначально заблокированы все кроме типа бронирования
+    guestsInput.disabled = true;
+    guestsInput.placeholder = "Выберите тип бронирования";
+
+    dateInput.disabled = true;
+    dateInput.placeholder = "Укажите количество гостей";
+
+    timeSelect.disabled = true;
+    timeSelect.innerHTML = '<option>Выберите дату</option>';
+
+    tableSelect.disabled = true;
+    tableSelect.innerHTML = '<option>Выберите время</option>';
+
+
+    typeInput.addEventListener("change", async () => {
+        if (typeInput.value) {
+            const maxGuests = guestsLimits[typeInput.value] || 4;
+    
+            updateGuestsOptions(maxGuests);
+    
+            guestsInput.disabled = false;
+            guestsInput.placeholder = "Количество гостей";
+    
+            // Разблокируем дату
+            dateInput.disabled = false;
+            dateInput.placeholder = "Выберите дату";
+    
+            guestsInput.dispatchEvent(new Event('input'));
+    
+            // Сбрасываем время и столик
+            timeSelect.innerHTML = '<option>Выберите дату</option>';
+            timeSelect.disabled = true;
+    
+            tableSelect.innerHTML = '<option>Выберите время</option>';
+            tableSelect.disabled = true;
+    
+            endTimeDisplay.textContent = "";
+            endTimeInput.value = "";
+    
+            // Если дата уже выбрана, обновляем доступное время с учётом нового типа
+            if (dateInput.value) {
+                timeSelect.innerHTML = `<option>Загрузка...</option>`;
+                timeSelect.disabled = true;
+                try {
+                    const response = await fetch(`/api/availability/?date=${dateInput.value}&type=${typeInput.value}`);
+                    const data = await response.json();
+                    if (data.blocked_intervals) {
+                        generateTimeOptions(data.blocked_intervals, durations[typeInput.value]);
+                    } else {
+                        timeSelect.innerHTML = `<option>Нет данных по доступности</option>`;
+                        timeSelect.disabled = true;
+                    }
+                } catch (error) {
+                    console.error("Ошибка при загрузке доступности:", error);
+                    timeSelect.innerHTML = `<option>Ошибка загрузки</option>`;
+                    timeSelect.disabled = true;
+                }
+            }
+        } else {
+            guestsInput.disabled = true;
+            guestsInput.innerHTML = '<option value="">Выберите тип бронирования</option>';
+            guestsInput.placeholder = "Выберите тип бронирования";
+    
+            dateInput.disabled = true;
+            dateInput.value = "";
+            dateInput.placeholder = "Укажите количество гостей";
+    
+            timeSelect.innerHTML = '<option>Выберите дату</option>';
+            timeSelect.disabled = true;
+    
+            tableSelect.innerHTML = '<option>Выберите время</option>';
+            tableSelect.disabled = true;
+    
+            endTimeDisplay.textContent = "";
+            endTimeInput.value = "";
+        }
+    });
+    
+    
+    guestsInput.addEventListener("input", () => {
+        if (guestsInput.value && Number(guestsInput.value) > 0) {
+            dateInput.disabled = false;
+            dateInput.placeholder = "Выберите дату";
+        } else {
+            dateInput.disabled = true;
+            dateInput.value = "";
+            dateInput.placeholder = "Укажите количество гостей";
+    
+            timeSelect.disabled = true;
+            timeSelect.innerHTML = '<option>Выберите дату</option>';
+    
+            tableSelect.disabled = true;
+            tableSelect.innerHTML = '<option>Выберите время</option>';
+    
+            endTimeDisplay.textContent = "";
+            endTimeInput.value = "";
+        }
+    });
+    
+    dateInput.addEventListener("change", () => {
+        if (dateInput.value) {
+            timeSelect.disabled = true;
+            timeSelect.innerHTML = `<option>Загрузка...</option>`;
+            loadAvailability();
+            timeSelect.placeholder = "Выберите время"; // если поддерживается
+        } else {
+            timeSelect.disabled = true;
+            timeSelect.innerHTML = '<option>Выберите дату</option>';
+    
+            tableSelect.disabled = true;
+            tableSelect.innerHTML = '<option>Выберите время</option>';
+    
+            endTimeDisplay.textContent = "";
+            endTimeInput.value = "";
+        }
+    });
+    
+
+    timeSelect.addEventListener("change", async () => {
+        if (timeSelect.value && !timeSelect.disabled && typeInput.value) {
+            tableSelect.disabled = false;
+    
+            const date = dateInput.value;
+            const time = timeSelect.value;
+            const type = typeInput.value;
+    
+            try {
+                const response = await fetch(`/api/free-tables/?date=${date}&time=${time}&type=${type}`);
+                const data = await response.json();
+    
+                tableSelect.innerHTML = ''; // очищаем
+    
+                if (data.tables.length > 0) {
+                    data.tables.forEach(table => {
+                        const option = document.createElement('option');
+                        option.value = table.id;
+                        option.textContent = `Столик #${table.number}`;
+                        tableSelect.appendChild(option);
+                    });
+                    tableSelect.disabled = false;
+                } else {
+                    tableSelect.innerHTML = '<option disabled>Нет свободных столиков</option>';
+                    tableSelect.disabled = true;
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки столиков:', error);
+                tableSelect.innerHTML = '<option disabled>Ошибка загрузки</option>';
+                tableSelect.disabled = true;
+            }
+        } else {
+            tableSelect.disabled = true;
+            tableSelect.innerHTML = '<option>Выберите время</option>';
+        }
+        updateEndTime();
+    });
+
+    if (calendar) calendar.destroy();
+    calendar = flatpickr("#id_date", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+    });
+});
+</script>
 
 {% endblock %}
