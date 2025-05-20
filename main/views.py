@@ -2,6 +2,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_GET
+from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.http import JsonResponse
 from django.contrib import messages
 from django.db import IntegrityError, OperationalError
@@ -120,6 +122,29 @@ def get_availability(request):
     })
 
 
+def send_booking_email(user_email, table_booking):
+    subject = f"Подтверждение бронирования"
+    message = (
+        f"Здравствуйте,\n\n"
+        f"Ваше бронирование успешно создано:\n"
+        f"Тип бронирования: {table_booking.get_booking_type_display()}\n"
+        f"Дата: {table_booking.date}\n"
+        f"Время: {table_booking.time}\n"
+        f"Столик: #{table_booking.table.number}\n"
+        f"Количество гостей: {table_booking.guests_count}\n"
+        f"Телефон: {table_booking.phone}\n\n"
+        f"Спасибо за выбор нашего кафе!"
+    )
+    email = EmailMessage(
+        subject=subject,
+        body=message,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[user_email],
+    )
+    email.encoding = 'utf-8'  # Указываем кодировку
+    email.send(fail_silently=False)
+
+
 def home(request):
 
     if request.method == "POST":
@@ -138,17 +163,28 @@ def home(request):
                 f"Дата: {table_booking.date}\n"
                 f"Время: {table_booking.time}\n"
                 f"Столик: #{table_booking.table.number}\n"
-                f"Гостей: {table_booking.guests_count}"
+                f"Гостей: {table_booking.guests_count}\n"
+                f"Телефон: {table_booking.phone}\n"
             )
             
-            # try:
-            #     loop = asyncio.new_event_loop()
-            #     asyncio.set_event_loop(loop)
-            #     loop.run_until_complete(bot.send_message(chat_id, message_text))
-            # except Exception as e:
-            #     logger.error(f"Ошибка Telegram-бота: {e}")
+            try:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop.run_until_complete(bot.send_message(chat_id, message_text))
+            except Exception as e:
+                logger.error(f"Ошибка Telegram-бота: {e}")
+
+            user_email = table_booking.user.email
+            if user_email:
+                try:
+                    send_booking_email(user_email, table_booking)
+                    logger.info(f"Email sent successfully to {user_email}")
+                except Exception as e:
+                    logger.error(f"Ошибка при отправке email: {e}")
                      
             return redirect('thanks')
+        else:
+            print("Form errors:", form.errors)
     else:
         form = TableBookingForm()
 

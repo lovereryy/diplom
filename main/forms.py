@@ -106,7 +106,7 @@ class TableBookingForm(forms.ModelForm):
     
     class Meta:
         model = TableBooking
-        fields = ['table', 'booking_type', 'guests_count', 'date', 'time']
+        fields = ['table', 'booking_type', 'guests_count', 'date', 'time', 'phone']
         widgets = {
             'date': forms.TextInput(attrs={'placeholder': 'Укажите дату', 'disabled': 'disabled', 'id': 'id_date'}),
             'time': forms.Select(attrs={'placeholder': 'Выберите время', 'disabled': 'disabled', 'id': 'id_time'}),
