@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div class="info-block center" id="home_first_block">
@@ -76,6 +76,7 @@
                 <select id="id_table" name="table" disabled>
                     <option value="" selected>Выберите время</option>
                 </select>
+                <button type="button" id="openModalBtn" class="btn primary">Посмотреть план зала</button>
             </div>
 
             <div>
@@ -98,6 +99,16 @@
     <div class="booking-text"  style="flex: 2;">Оставьте заявку на бронирование!<br>
         Или позвоните по номеру<br>
         <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+    </div>
+</div>
+
+
+<!-- Модальное окно -->
+<div id="tableModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalBtn">&times;</span>
+        <img src="{% static 'main/images/plan.png' %}" alt="План зала">
+        <p>План рассадки по столикам</p>
     </div>
 </div>
 
@@ -380,7 +391,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     data.tables.forEach(table => {
                         const option = document.createElement('option');
                         option.value = table.id;
-                        option.textContent = `Столик #${table.number}`;
+                        option.textContent = `Столик # ${table.number} - ${table.location}`;
                         tableSelect.appendChild(option);
                     });
                     tableSelect.disabled = false;
@@ -406,6 +417,28 @@ document.addEventListener("DOMContentLoaded", function () {
         minDate: "today",
     });
 });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('openModalBtn');
+        const modal = document.getElementById('tableModal');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    });
 </script>
 
 {% endblock %}

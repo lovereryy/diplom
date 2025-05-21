@@ -850,6 +850,78 @@
         }
     },
     {
+        "model": "main.table",
+        "pk": 1,
+        "fields": {
+            "number": 1,
+            "location": "У окна",
+            "seats": 2
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 2,
+        "fields": {
+            "number": 2,
+            "location": "У окна",
+            "seats": 2
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 3,
+        "fields": {
+            "number": 3,
+            "location": "У стены",
+            "seats": 4
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 4,
+        "fields": {
+            "number": 4,
+            "location": "У стены",
+            "seats": 4
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 5,
+        "fields": {
+            "number": 5,
+            "location": "У стены",
+            "seats": 4
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 6,
+        "fields": {
+            "number": 6,
+            "location": "В центре",
+            "seats": 8
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 7,
+        "fields": {
+            "number": 7,
+            "location": "У бара",
+            "seats": 3
+        }
+    },
+    {
+        "model": "main.table",
+        "pk": 8,
+        "fields": {
+            "number": 8,
+            "location": "У бара",
+            "seats": 4
+        }
+    },
+    {
         "model": "main.specialoffers",
         "pk": 1,
         "fields": {

@@ -56,7 +56,7 @@ def get_free_tables(request):
     for table in all_tables:
         table_bookings = [b for b in bookings if b.table_id == table.id]
         if not any(overlaps(start_dt, end_dt, b.start_datetime, b.end_datetime) for b in table_bookings):
-            free_tables.append({"id": table.id, "number": table.number})
+            free_tables.append({"id": table.id, "number": table.number, "location": table.location})
 
     return JsonResponse({"tables": free_tables})
 
