@@ -159,7 +159,7 @@ def home(request):
             chat_id = settings.TELEGRAM_CHAT_ID
 
             message_text = (
-                f"📅 Новая бронь:\n\n"
+                f"Новая бронь:\n\n"
                 f"Тип: {table_booking.get_booking_type_display()}\n"
                 f"Дата: {table_booking.date}\n"
                 f"Время: {table_booking.time}\n"
