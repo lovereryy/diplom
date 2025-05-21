@@ -95,3 +95,13 @@ class SpecialOffers(models.Model):
     date_starting = models.DateTimeField(verbose_name="Дата начала акции")
     date_ending = models.DateTimeField(verbose_name="Дата окончания акции")
     image = models.ImageField(upload_to="specials/", blank=False, null=False, verbose_name="Изображение")
+
+class EmailCampaign(models.Model):
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    image = models.ImageField(upload_to='email_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    sent = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.subject} ({'отправлено' if self.sent else 'не отправлено'})"
