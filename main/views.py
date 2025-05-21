@@ -133,6 +133,7 @@ def send_booking_email(user_email, table_booking):
         f"Столик: #{table_booking.table.number}\n"
         f"Количество гостей: {table_booking.guests_count}\n"
         f"Телефон: {table_booking.phone}\n\n"
+        f"Предлагаем рассмотреть меню на эту дату: http://127.0.0.1:8000/menu/ \n"
         f"Спасибо за выбор нашего кафе!"
     )
     email = EmailMessage(
@@ -166,7 +167,7 @@ def home(request):
                 f"Гостей: {table_booking.guests_count}\n"
                 f"Телефон: {table_booking.phone}\n"
             )
-            
+
             try:
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
